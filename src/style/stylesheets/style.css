@@ -1,0 +1,769 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3373824, 2017-04-12T19:58:45-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: BornholmSandvig by Trine Rask
+ * URL: http://www.myfonts.com/fonts/trinerask/bornholm-sandvig/regular/
+ * Copyright: Copyright (c) 2012 by Trine Rask. All rights reserved.
+ *
+ * Webfont: Trenda-Regular by Latinotype
+ * URL: http://www.myfonts.com/fonts/latinotype/trenda/regular/
+ * Copyright: Copyright &#x00A9; 2016 by Daniel Hernandez &amp; Paula Nazal. All rights reserved.
+ *
+ * Webfont: Trenda-RegularIt by Latinotype
+ * URL: http://www.myfonts.com/fonts/latinotype/trenda/regular-italic/
+ * Copyright: Copyright &#x00A9; 2016 by Daniel Hernandez &amp; Paula Nazal. All rights reserved.
+ *
+ * Webfont: Trenda-Semibold by Latinotype
+ * URL: http://www.myfonts.com/fonts/latinotype/trenda/semibold/
+ * Copyright: Copyright &#x00A9; 2016 by Daniel Hernandez &amp; Paula Nazal. All rights reserved.
+ *
+ * Webfont: Trenda-SemiboldIt by Latinotype
+ * URL: http://www.myfonts.com/fonts/latinotype/trenda/semibold-italic/
+ * Copyright: Copyright &#x00A9; 2016 by Daniel Hernandez &amp; Paula Nazal. All rights reserved.
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3373824
+ * Licensed pageviews: 10,000
+ *
+ * © 2017 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/337b00");
+
+
+@font-face {font-family: 'BornholmSandvig';src: url('../webfonts/337B00_0_0.eot');src: url('../webfonts/337B00_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/337B00_0_0.woff2') format('woff2'),url('../webfonts/337B00_0_0.woff') format('woff'),url('../webfonts/337B00_0_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Trenda-Regular';src: url('../webfonts/337B00_1_0.eot');src: url('../webfonts/337B00_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/337B00_1_0.woff2') format('woff2'),url('../webfonts/337B00_1_0.woff') format('woff'),url('../webfonts/337B00_1_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Trenda-RegularIt';src: url('../webfonts/337B00_2_0.eot');src: url('../webfonts/337B00_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/337B00_2_0.woff2') format('woff2'),url('../webfonts/337B00_2_0.woff') format('woff'),url('../webfonts/337B00_2_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Trenda-Semibold';src: url('../webfonts/337B00_3_0.eot');src: url('../webfonts/337B00_3_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/337B00_3_0.woff2') format('woff2'),url('../webfonts/337B00_3_0.woff') format('woff'),url('../webfonts/337B00_3_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Trenda-SemiboldIt';src: url('../webfonts/337B00_4_0.eot');src: url('../webfonts/337B00_4_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/337B00_4_0.woff2') format('woff2'),url('../webfonts/337B00_4_0.woff') format('woff'),url('../webfonts/337B00_4_0.ttf') format('truetype');}
+
+@viewport{
+    width: 'device-width';
+    zoom: 1.0;
+    -ms-content-zooming: none;
+    user-scalable: no;
+}
+
+@-ms-viewport{
+    width: 'device-width';
+    zoom: 1.0;
+    -ms-content-zooming: none;
+    user-zoom: fixed;
+}
+
+
+/* web fonts above, basic useage below */
+
+.BornholmSandvig {
+	font-family: BornholmSandvig;
+	font-weight: normal;
+	font-style: normal;
+}
+.Trenda-Regular {
+	font-family: Trenda;
+	font-weight: normal;
+	font-style: normal;
+}
+.Trenda-It{
+	font-family: Trenda-It;
+	font-weight: normal;
+	font-style: normal;
+}
+.Trenda-Bold {
+	font-family: Trenda-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.Trenda-BoldIt {
+	font-family: Trenda-BoldIt;
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: Trenda;
+	color: #352c1a;
+	font-size: 14px;
+}
+
+h1, h2, h3, {
+	font-family: BornholmSandvig;
+	color: #352c1a;
+}
+
+h4, h5, h6, {
+	font-family: Trenda-Bold;
+	color: #352c1a;
+}
+
+p {
+	text-align: left;
+}
+
+a {
+	color:#352c1a;
+}
+
+a:hover {
+	color:#352c1a;
+}
+
+/* The animation code */
+@keyframes openingP{
+    0%   {width: 0%;}
+    100% {width: 30%;}
+}
+
+@keyframes openingPPart{
+    0%   {width: 50%;}
+    100% {width: 30%;}
+}
+
+@keyframes openingPL{
+    0%   {width: 0%;}
+    100% {width: 50%;}
+}
+
+@keyframes openingPLPart{
+    0%   {width: 30%;}
+    100% {width: 50%;}
+}
+
+@keyframes closingP{
+    0%   {width: 30%;}
+    100% {width: 0%;}
+}
+
+@keyframes closingPL{
+    0%   {width: 65%;}
+    100% {width: 0%;}
+}
+
+@keyframes openingM{
+    0%   {width: 90%;}
+    100% {width: 65%;}
+}
+
+@keyframes openingMQ{
+    0%   {width: 90%;}
+    100% {width: 50%;}
+}
+
+@keyframes closingMQ{
+    0%   {width: 50%;}
+    100% {width: 65%;}
+}
+
+@keyframes closingM{
+    0%   {width: 65%;}
+    100% {width: 90%;}
+}
+
+/* The element to apply the animation to */
+.container-fluid {
+    width: 100%;
+    height: 100vh;
+    padding: 10px 20px 10px 20px;
+    overflow-y: scroll;
+		overflow-x: hidden;
+    background-color: #f4f2ec;
+}
+
+/*.leaflet-container {
+    height: 819.2px;
+    width: 1638.4px;
+    background-color: #ffffff;
+}*/
+
+.leaflet-container {
+    height: 1024px;
+    width: 2048px;
+    background-color: #ffffff;
+}
+
+.logo {
+	width: 60px;
+}
+
+.flex {
+	display: flex;
+}
+
+.flexcol {
+	flex-direction: column;
+}
+
+.between {
+	justify-content: space-between;
+}
+
+.bottom {
+	align-items: flex-end;
+}
+
+.center {
+	align-items: center;
+}
+
+.middle {
+	justify-content: center;
+}
+
+.around {
+	justify-content: space-around;
+}
+
+.header {
+	border:double 3px #ffffff;
+	background-color: #d8d0ba;
+	padding-bottom: 10px;
+	box-shadow: 0 0 3px #808080;
+	margin-top: 37px;
+	margin-bottom: 0px !important;
+}
+
+.footer {
+	border:double 3px #ffffff;
+	background-color: #d8d0ba;
+	padding: 10px 0px 5px 20px ;
+	margin-top: 10px;
+	box-shadow: 0 0 3px #808080;
+}
+
+#footer {
+	padding-right: 0px !important;
+}
+
+.midBrown {
+	background-color: #6f6861;
+}
+
+@media (max-width: 1440px) {
+	.mainMaps {
+		height: 725px;
+		/*681*/
+	}
+}
+@media (min-width: 1441px) {
+	.mainMaps {
+		height: 77vh;
+	}
+}
+
+.circHL {
+	stroke-width: 3;
+	fill: #ffffff;
+	fill-opacity:.05;
+	stroke-opacity: 1;
+	text-shadow: 0px 0px 8px #000000;
+  filter: drop-shadow( 0px 0px 8px #000 );
+}
+
+.circHLThick {
+	stroke-width: 7;
+	fill: #ffffff;
+	fill-opacity:.01;
+	stroke-opacity: 1;
+	text-shadow: 0px 0px 10px #000000;
+	filter: drop-shadow( 0px 0px 10px #000 );
+}
+
+.circHL:hover {
+	stroke-width: 7;
+	fill: #ffffff;
+	fill-opacity:.01;
+	stroke-opacity: 1;
+	text-shadow: 0px 0px 10px #000000;
+	filter: drop-shadow( 0px 0px 10px #000 );
+}
+
+.intPanel {
+	/*position: absolute;
+	top: 108px;*/
+	background-color: rgba(230, 225, 211, .75);
+	padding: 5px;
+	padding-top: 8px;
+	margin: 2px;
+	border:double 3px #ffffff;
+}
+
+.grey {
+	filter: url('#greyscale');
+}
+
+.circHLMin {
+	stroke: #ffffff;
+	fill: #ffffff;
+	fill-opacity:.75;
+	stroke-opacity: 1;
+}
+
+.textHL {
+	text-anchor: start;
+	fill: #ffffff;
+	font-family: 'BornholmSandvig';
+	text-shadow: 0px 0px 8px #000000;
+}
+
+.textSHL {
+	text-anchor: start;
+	fill: #ffffff;
+	font-family: 'Trenda';
+	text-shadow: 0px 0px 8px #000000;
+}
+
+.textSHLR {
+	text-anchor: end;
+	fill: #ffffff;
+	font-family: 'Trenda';
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-shadow: 0px 0px 8px #000000;
+}
+
+.controlTrans {
+	position: absolute;
+	top: 300px;
+	left: 50px;
+}
+
+.mFullO {
+	border:double 3px #e6e1d3;
+	background-color: #ffffff;
+	margin-top: 10px;
+	min-width: 90%;
+	min-height: 681px;
+	box-shadow: 0 0 3px #808080;
+	overflow: hidden;
+}
+
+.navbar {
+	/*min-height: 4vh;*/
+	top: 4.5vh;
+
+}
+
+.navbarG {
+	/*max-height: 7.2vh;*/
+	top: 0vh;
+	overflow: hidden;
+	background-color: #444444;
+}
+
+.mFull {
+	border:double 3px #e6e1d3;
+	background-color: #ffffff;
+	margin-top: 10px;
+	width: 65%;
+	min-height: 725px;
+	box-shadow: 0 0 3px #808080;
+	overflow: hidden;
+	animation-name: closingM;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+.mPart {
+	border:double 3px #e6e1d3;
+	background-color: #ffffff;
+	margin-top: 10px;
+	width: 65%;
+	min-height: 725px;
+	box-shadow: 0 0 3px #808080;
+	overflow: hidden;
+	animation-name: openingM;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+.mQuarter {
+	border:double 3px #e6e1d3;
+	background-color: #ffffff;
+	margin-top: 10px;
+	width: 65%;
+	min-height: 725px;
+	box-shadow: 0 0 3px #808080;
+	overflow: hidden;
+	animation-name: openingMQ;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+.panelHidden {
+	border:double 3px #e6e1d3;
+	padding:10px;
+	background-color: #f4f2ec;
+	/*background-color: #ffffff;*/
+	margin-top: 10px;
+	min-height: 725px;
+	width: 0%;
+	visibility: hidden;
+}
+
+.panelOpen {
+	border:double 3px #e6e1d3;
+	padding:10px;
+	background-color: #f4f2ec;
+	/*background-color: #ffffff;*/
+	margin-top: 10px;
+	min-height: 725px;
+	width: 0%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	box-shadow: 0 0 3px #808080;
+	animation-name: openingP;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+.panelOpenPart {
+	border:double 3px #e6e1d3;
+	padding:10px;
+	background-color: #f4f2ec;
+	/*background-color: #ffffff;*/
+	margin-top: 10px;
+	min-height: 725px;
+	overflow-x: hidden;
+	width: 60%;
+	overflow-y: scroll;
+	box-shadow: 0 0 3px #808080;
+	animation-name: openingPPart;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+.panelLarge {
+	border:double 3px #e6e1d3;
+	padding:10px;
+	background-color: #f4f2ec;
+	/*background-color: #ffffff;*/
+	margin-top: 10px;
+	width: 65%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	min-height: 725px;
+	box-shadow: 0 0 3px #808080;
+	animation-name: openingPL;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+.noPad {
+	padding:0px;
+}
+
+.panelLargePart {
+	border:double 3px #e6e1d3;
+	padding:10px;
+	background-color: #f4f2ec;
+	/*background-color: #ffffff;*/
+	margin-top: 10px;
+	width: 65%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	min-height: 725px;
+	box-shadow: 0 0 3px #808080;
+	animation-name: openingPLPart;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+.panelClose {
+	border:double 3px #e6e1d3;
+	background-color: #f4f2ec;
+	/*background-color: #ffffff;*/
+	margin-top: 10px;
+	width: 30%;
+	overflow: hidden;
+	visibility: visible;
+	min-height: 725px;
+	box-shadow: 0 0 3px #808080;
+	animation-name: closingP;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+.mtypeFull {
+	border:double 3px #ffffff;
+	padding:5px;
+	min-height: 725px;
+	background-color: #e6e1d3;
+	margin-top: 10px;
+	width: 4.5%;
+	box-shadow: 0 0 3px #808080;
+}
+
+.nIcon {
+	background-color: #f4f2ec;
+	width: 30px;
+	height: 30px;
+	margin:8px 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 1px #808080;
+}
+
+.nIcon:hover {
+	background-color: #ffffff;
+	box-shadow: 0 0 3px #808080;
+}
+
+.noPad {
+	padding:0px;
+}
+
+.bImg {
+	width: 20px;
+	height: 20px;
+}
+
+.imgSelect {
+	border: solid 1px #000000;
+}
+
+.underline {
+	text-decoration: underline;
+	margin-top: 5px;
+}
+
+.m10 {
+	margin-top: 10px;
+}
+
+.marg10 {
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.marg10l {
+	margin-left: 10px;
+}
+
+.pad10 {
+	padding: 0px 10px;
+}
+
+.border3 {
+	border: double 3px #e6e1d3;
+	padding:0px;
+	margin:0px;
+}
+
+.editOps {
+	padding: 10px;
+	border: solid 1px #352c1a;
+	border-radius: 5px;
+}
+
+.whiteBackground {
+	background-color: #ffffff;
+}
+
+.overlayWhite {
+	background-color: #ffffff;
+	opacity: 0.45;
+}
+
+.overlayText {
+	padding: 10px;
+}
+
+.rotate {
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+}
+
+.opacity25 {
+	opacity: .25;
+}
+
+.bIcon {
+	background-color: #f4f2ec;
+	width: 40px;
+	height: 40px;
+	margin:8px 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 1px #808080;
+}
+
+.bIconSelected {
+	background-color: #ffffff;
+	width: 40px;
+	height: 40px;
+	margin:8px 10px;
+	border-radius: 5px;
+	border: solid 2px #352c1a;
+	box-shadow: 0 0 3px #808080;
+}
+
+.inlineBlock {
+	display: inline-block;
+}
+
+.bIcon:active {
+	background-color: #ffffff;
+	border: solid 2px #352c1a;
+	box-shadow: 0 0 3px #808080;
+}
+
+.bIconSm {
+	background-color: #f4f2ec;
+	margin:4px 0px;
+	border-radius: 5px;
+	box-shadow: 0 0 1px #808080;
+}
+
+.bIconSm:active {
+	background-color: #ffffff;
+	box-shadow: 0 0 3px #808080;
+}
+
+.nSpc {
+	width: 40px;
+	height: 10px;
+}
+
+.nSpcSm {
+	width: 40px;
+	height: 5px;
+}
+
+.fadein {
+    animation-name: bk-on;
+    animation-duration: 8s;
+}
+
+.masterWindow {
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+
+}
+
+.bNav {
+	cursor: pointer;
+}
+
+.bNav:hover {
+	text-decoration: underline;
+}
+
+
+.maintitle {
+	font-size: 3.6em;
+}
+
+.xL {
+	font-size: 4em;
+}
+
+.sButtons {
+	font-size: .65em;
+}
+
+.p20 {
+	padding-top:20px;
+}
+
+.l20 {
+	padding-left:20px;
+}
+
+.p15 {
+	padding-top:15px;
+}
+
+.p30 {
+	padding-top:30px;
+}
+
+.p40 {
+	padding-top:40px;
+}
+
+.p50 {
+	padding-top:50px;
+}
+
+.p60 {
+	padding-top:60px;
+}
+
+.p80 {
+	padding-top:80px;
+}
+
+.p100 {
+	padding-top:100px;
+}
+
+
+.closerB {
+	margin:0px !important;
+}
+.closerB1 {
+	margin:1px !important;
+}
+
+.closerT {
+	margin-top:10px;
+	margin-bottom:5px;
+}
+
+
+.subtitle {
+	font-size: 1.25em;
+	letter-spacing: 2px;
+	opacity: .8;
+}
+
+select {
+		border-style: none;
+	background-color: none;
+}
+
+.voyageSelect {
+	width: 30%;
+	font-size: 1.25em;
+	text-align: center;
+	font-family: Trenda-Regular;
+	border-style: none;
+	background-color: none;
+}
+
+.buttonSelect {
+	padding-top:10px;
+	font-size: 1em;
+	background-color: #cbded8;
+	border-color: #cbded8;
+	text-align: center;
+	font-family: Saltpetre ;
+}
+
+li{
+	line-height: 1.25em;
+}
+
+.large {
+	font-size: 1rem;
+	line-height: 1.6rem;
+}
