@@ -303,6 +303,9 @@ class FooterSlides extends Component {
                 that.setTitles(site.name.split('.'));
 
                 let obj = that.sites.genNarratives.filter(narr => +narr.coreId===+siteId);
+
+
+
                 // if (site.clusterId !== null){
                 //     var key = obj[0].clusterId;
                 //     var obj2 = that.sites.genNarratives.filter(narr => +narr.clusterId===+key);

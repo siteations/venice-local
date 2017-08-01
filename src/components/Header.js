@@ -23,7 +23,7 @@ const Header = ((props) => {
 	return (
 	        <div className="row flex bottom header">
                         <div className="col-lg-1 flex">
-                                <a href=""><img className='logo' src="/img/the-newberry-small.png" /></a>
+                                <a href=""><img className='logo' src="./img/the-newberry-small.png" /></a>
                                 {/*<IconMenu
                                       iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
                                       anchorOrigin={{horizontal: 'left', vertical: 'top'}}

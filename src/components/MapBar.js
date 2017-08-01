@@ -16,29 +16,29 @@ import {setNarr, setTitlesCore} from '../action-creators/panelActions.js';
 import {panelsOther} from '../non-db/panelsOther.js';
 
 let mapButtons0=[
-	{cn:"nIcon flex center middle", v:"intro", src:'/img/intro-01.svg' },
-	{cn:"nIcon flex center middle", v:"prints", src:"/img/print-01.svg" },
-	{cn:"nIcon flex center middle", v:"maps", src:"/img/maps-01.svg" }
+	{cn:"nIcon flex center middle", v:"intro", src:'./img/intro-01.svg' },
+	{cn:"nIcon flex center middle", v:"prints", src:"./img/print-01.svg" },
+	{cn:"nIcon flex center middle", v:"maps", src:"./img/maps-01.svg" }
 	];
 	// {cn:"nSpc", v:'navigate', src:" " },
-	// {cn:"nIcon flex center middle", v:"panel", src:"/img/arrow1-01.svg" },
-	// {cn:"nIcon flex center middle", v:"panel large", src:"/img/arrow2-01.svg" },
+	// {cn:"nIcon flex center middle", v:"panel", src:"./img/arrow1-01.svg" },
+	// {cn:"nIcon flex center middle", v:"panel large", src:"./img/arrow2-01.svg" },
 let mapButtons1=[
-	{cn:"nIcon flex center middle", v:"all layers", src:"/img/all-layers-01.svg" },
-	{cn:"nIcon flex center middle", v:"parish churches", src:"/img/parish-01.svg" },
-	{cn:"nIcon flex center middle", v:"basilica", src:"/img/bascilica-01.svg" },
-	{cn:"nIcon flex center middle", v:"plague churches", src:"/img/plague-01.svg" },
-	{cn:"nIcon flex center middle", v:"monastery", src:"/img/culture-01.svg" },
-	{cn:"nIcon flex center middle", v:"convent", src:"/img/convent-01.svg" },
-	{cn:"nIcon flex center middle", v:"non-catholic communities", src:"/img/non-catholic-01.svg" },
-	{cn:"nIcon flex center middle", v:"processions", src:"/img/ritual-01.svg" },
-	{cn:"nIcon flex center middle", v:"printing", src:"/img/books-01.svg" },
-	{cn:"nIcon flex center middle", v:"textual consumption", src:"/img/ephemera-01.svg" }
+	{cn:"nIcon flex center middle", v:"all layers", src:"./img/all-layers-01.svg" },
+	{cn:"nIcon flex center middle", v:"parish churches", src:"./img/parish-01.svg" },
+	{cn:"nIcon flex center middle", v:"basilica", src:"./img/bascilica-01.svg" },
+	{cn:"nIcon flex center middle", v:"plague churches", src:"./img/plague-01.svg" },
+	{cn:"nIcon flex center middle", v:"monastery", src:"./img/culture-01.svg" },
+	{cn:"nIcon flex center middle", v:"convent", src:"./img/convent-01.svg" },
+	{cn:"nIcon flex center middle", v:"non-catholic communities", src:"./img/non-catholic-01.svg" },
+	{cn:"nIcon flex center middle", v:"processions", src:"./img/ritual-01.svg" },
+	{cn:"nIcon flex center middle", v:"printing", src:"./img/books-01.svg" },
+	{cn:"nIcon flex center middle", v:"textual consumption", src:"./img/ephemera-01.svg" }
 ]
 
 let mapButtons2=[
-	{cn:"nIcon flex center middle", v:"bibliography", src:"/img/menu-01.svg" },
-	{cn:"nIcon flex center middle", v:"credits", src:"/img/credits-01.svg" }
+	{cn:"nIcon flex center middle", v:"bibliography", src:"./img/menu-01.svg" },
+	{cn:"nIcon flex center middle", v:"credits", src:"./img/credits-01.svg" }
 ];
 
 const toolstyles = {

@@ -195,19 +195,19 @@ class MapOps extends Component {
                 <h5 style={{fontWeight: 'bold'}}>tours</h5>
                 <button className="btn btn-default btn-sm bIconSm" >
                     <Tooltip content={'tour all processions'} styles={toolstyles}>
-                        <img src='/img/ritual-01.svg' className='bImg' value='1' onTouchTap={e=>this.setTour(e)} />
+                        <img src='./img/ritual-01.svg' className='bImg' value='1' onTouchTap={e=>this.setTour(e)} />
                     </Tooltip>
                 </button>
                 <br/>
                 <button className="btn btn-default btn-sm bIconSm" onTouchTap="">
                     <Tooltip content={'tour all printing sites'} styles={toolstyles}>
-                        <img src='/img/books-01.svg' className='bImg' value='2' onTouchTap={e=>this.setTour(e)} />
+                        <img src='./img/books-01.svg' className='bImg' value='2' onTouchTap={e=>this.setTour(e)} />
                     </Tooltip>
                 </button>
                 <br/>
                 <button className="btn btn-default btn-sm bIconSm" onTouchTap="">
                     <Tooltip content={'tour all basilica'} styles={toolstyles}>
-                        <img src='/img/bascilica-01.svg' className='bImg' value='3' onTouchTap={e=>this.setTour(e)} />
+                        <img src='./img/bascilica-01.svg' className='bImg' value='3' onTouchTap={e=>this.setTour(e)} />
                     </Tooltip>
                 </button>
 

@@ -30,7 +30,7 @@ export const ClipTiles = (props) => {
 
                     return (
                             <image
-                            xlinkHref = {`/img/${props.name}/${tile.z}-${tile.x}-${tile.y}.jpg`}
+                            xlinkHref = {`./img/${props.name}/${tile.z}-${tile.x}-${tile.y}.jpg`}
                                 width={props.tSize}
                                     height={props.tSize}
                                     x = { tile.xpos }
@@ -68,7 +68,7 @@ export const BackgroundTiles = (props) => {
 
                     return (
                             <image
-                                xlinkHref = {`/img/${props.name}/${tile.z}-${tile.x}-${tile.y}.jpg`}
+                                xlinkHref = {`./img/${props.name}/${tile.z}-${tile.x}-${tile.y}.jpg`}
                                 width={props.tSize}
                                     height={props.tSize}
                                     x = { tile.xpos }
@@ -101,7 +101,7 @@ export const Underlay = (props) => {
     //props.wSize, props.color
     return(
            <image
-            xlinkHref = {`/img/${props.name}.jpg`}
+            xlinkHref = {`./img/${props.name}.jpg`}
                 width={props.tSize*(scaleOps[props.currZoom][0]+1)}
                     height={props.tSize*(scaleOps[props.currZoom][1]+1)}
                     x = { -1 * props.xyOffsets[0] }
