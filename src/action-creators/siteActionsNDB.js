@@ -1,11 +1,13 @@
-import axios from 'axios';
-import Promise from 'bluebird';
+// import axios from 'axios';
+// import Promise from 'bluebird';
 //---------------------------PRE-DB / PRE-REDUX PLACEHOLDERS---------------------------
 
+import * as tourArray from '../non-db/tours.json';
 import * as sites from '../non-db/sites.json';
 import * as details from '../non-db/details.json';
 import * as images from '../non-db/images.json';
 import * as narratives from '../non-db/narratives.json';
+import * as biblio from '../non-db/biblio.json';
 
 // //var cirMain = siteSeed;
 // var cirMinor = detailSeed;
@@ -200,16 +202,16 @@ export const saved = (bool) => {
 }
 //-------------------reducers && initial info
 const initSites = {
-	allSites:[], //array of objects
+	allSites:sites.slice(), //array of objects
 
 	currSite: 0, //id of site
 	currSiteOn: false, //secondary object arrays
 	currDetail: 0, //main vs. peripheral detail for panel (id of site)
 	currNarrative: {},
-	genNarratives: [],
-	genDetails: [], //narratives & captions
-	genImages: [],
-	genBiblio: [],
+	genNarratives: narratives.slice(),
+	genDetails: details.slice(), //narratives & captions
+	genImages: images.slice(),
+	genBiblio: biblio.slice(),
 	currImages: {}, //links for panel images
 	minorId: 0,
 	clusterId: 0,
@@ -337,54 +339,24 @@ export const siteReducer = (prevState = initSites, action) => {
 
 //-------------------COMPLEX ACTION CALLS AND AXIOS INFO...
 
-//------------------api version--------------------------
+
+//------------------non-api version--------------------------
 
 export const loadSites = () => dispatch => {
 	//rework for axios later
-	const allSites = axios.get('/api/sites')
-			.then(responses => {
-				return responses.data;
-			})
-	    .then((sites) => {
-	    		dispatch(getAllSites(sites));
-	    })
-	    .catch(console.log);
+	    		dispatch(getAllSites(sites.slice()));
+
 }
 
 export const loadFilteredSites = (layerArr) => dispatch => { //
-
-	const allSites = axios.get('/api/sites')
-			.then(responses => {
-				return responses.data;
-			})
-	    .then((sites) => { //front-end filter vs. back
 
 			 var selectSites = sites.filter(circle =>{
 					return layerArr.indexOf(circle.type)>-1;
 				})
 
 				dispatch(getFilteredSites(selectSites));
-			})
-			.catch(console.log);
+
 }
-
-//------------------non-api version--------------------------
-
-// export const loadSites = () => dispatch => {
-// 	//rework for axios later
-// 	    		dispatch(getAllSites(sites.slice()));
-
-// }
-
-// export const loadFilteredSites = (layerArr) => dispatch => { //
-
-// 			 var selectSites = sites.filter(circle =>{
-// 					return layerArr.indexOf(circle.type)>-1;
-// 				})
-
-// 				dispatch(getFilteredSites(selectSites));
-
-// }
 
 //------------------non-api end--------------------------
 
@@ -410,279 +382,101 @@ export const addHoverSite = (layer) => dispatch =>{
 	dispatch(addHoverLayer(layer));
 }
 
-//------------------api version--------------------------
+
+// //------------------non-api version--------------------------
 
 export const loadLayers = () => dispatch => { //loading all
-
-		const allSites = axios.get('/api/sites')
-			.then(responses => {
-				return responses.data;
-			})
-	    .then((sites) => { //front-end filter vs. back
 
 			let cirLayers = [];
 			sites.forEach(circle=>{
 		    		if (cirLayers.indexOf(circle.type) === -1){cirLayers.push(circle.type)};
 				})
 			dispatch(getAllLayers(cirLayers));
-		})
-	   .catch(console.log);
 }
-
 
 export const deleteSite = (id) => dispatch => {
-	axios.delete(`/api/sites/${id}`)
-			.then(responses => {
-				return responses.data;
-			})
-			.then((results) => {
-			console.log(results);
-			dispatch(loadSites());
-			})
-			.catch(console.log);
+
+		//not necessariy outside of editing
 }
-
-// //------------------non-api version--------------------------
-
-// export const loadLayers = () => dispatch => { //loading all
-
-// 			let cirLayers = [];
-// 			sites.forEach(circle=>{
-// 		    		if (cirLayers.indexOf(circle.type) === -1){cirLayers.push(circle.type)};
-// 				})
-// 			dispatch(getAllLayers(cirLayers));
-// }
-
-// export const deleteSite = (id) => dispatch => {
-
-// 		//not necessariy outside of editing
-// }
 
 //-----------detail editing dispatches------------------------
 export const deleteDetail = (id) => dispatch => {
-	axios.delete(`/api/details/${id}`)
-			.then(responses => {
-				return responses.data;
-			})
-			.then((results) => {
-				console.log(results);
-			dispatch(reloadDetails());
-			})
-			.catch(console.log);
+	//not necessariy outside of editing
 }
 
 export const editDetail = (id, obj) => dispatch => {
-	axios.put(`/api/details/${id}`, obj)
-			.then(responses => {
-				return responses.data;
-			})
-			.then((results) => {
-				console.log(results);
-			dispatch(reloadDetails());
-			})
-			.catch(console.log);
+	//not necessariy outside of editing
 }
 
 
 export const reloadDetails = () => dispatch => {
-	axios.get('/api/details')
-			.then(responses => {
-				return responses.data;
-			})
-			.then((results) => {
-			dispatch(getGenDetails(results));
-			})
-			.catch(console.log);
+
+			dispatch(getGenDetails(details.slice()));
+
 }
 
 export const addDetail = (img, obj) => dispatch => {
 
-	axios.post('api/images-files', img)
-			.then(responses => {
-				return responses.data;
-			})
-			.then(results =>{
-
-				obj.srcThumb = results.uri;
-				console.log('image placed, link: ', obj);
-
-			axios.post('/api/details', obj)
-						.then(responses => {
-							return responses.data;
-						})
-						.then((results) => {
-						dispatch(reloadDetails()); //call and reload all
-						dispatch(saved(true));
-						})
-						.catch(console.log);
-			})
-			.catch(console.log);
+	//not necessariy outside of editing
 }
 
 export const addImage = (img, obj) => dispatch => {
-	console.log('image original file: ', img);
 
-	axios.post('api/images-files', img)
-			.then(responses => {
-				return responses.data;
-			})
-			.then(results =>{
-
-				obj.src = results.uri;
-				console.log('image placed, link: ', obj);
-
-			axios.post('/api/images', obj)
-						.then(responses => {
-							return responses.data;
-						})
-						.then((results) => {
-							dispatch(reloadImages()); //call and reload all
-							dispatch(saved(true));
-						})
-						.catch(console.log);
-			})
-			.catch(console.log);
+	//not necessariy outside of editing
 }
 
 export const reloadImages = () => dispatch => {
-	axios.get('/api/images')
-			.then(responses => {
-				return responses.data;
-			})
-			.then((images) => {
-			dispatch(getGenImages(images));
-			})
-			.catch(console.log);
+
+			dispatch(getGenImages(images.slice()));
+
 }
 
 export const deleteImages = (id) => dispatch => {
-	axios.delete(`/api/images/${id}`)
-			.then(responses => {
-				return responses.data;
-			})
-			.then((results) => {
-			dispatch(reloadImages());
-			})
-			.catch(console.log);
+	//not necessariy outside of editing
 }
 
 export const editImages = (id, obj) => dispatch => {
-	axios.put(`/api/images/${id}`, obj)
-			.then(responses => {
-				return responses.data;
-			})
-			.then((results) => {
-			dispatch(reloadImages());
-			})
-			.catch(console.log);
+	//not necessariy outside of editing
 }
 
 //-----------narrative & detail general dispatches------------------------
 
 export const deleteNarrative = (id) => dispatch => {
-	axios.delete(`/api/narratives/${id}`)
-			.then(responses => {
-				return responses.data;
-			})
-			.then((narratives) => {
-				console.log(narratives);
-			dispatch(reloadNarratives());
-			})
-			.catch(console.log);
+	//not necessariy outside of editing
 }
 
 export const deleteBiblio = (id) => dispatch => {
-		axios.delete(`/api/biblio/${id}`)
-			.then(responses => {
-				return responses.data;
-			})
-			.then((bib) => {
-				console.log(bib);
-			dispatch(reloadBiblio());
-			})
-			.catch(console.log);
+	//not necessariy outside of editing
 }
 
 
 export const editBiblio = (id, obj) => dispatch => {
-		axios.put(`/api/biblio/${id}`, obj)
-			.then(responses => {
-				return responses.data;
-			})
-			.then((bib) => {
-				console.log(bib);
-			dispatch(reloadBiblio());
-			})
-			.catch(console.log);
+	//not necessariy outside of editing
 }
 
 export const reloadNarratives = () => dispatch => {
-	axios.get('/api/narratives')
-			.then(responses => {
-				return responses.data;
-			})
-			.then((narratives) => {
-			dispatch(getGenNarratives(narratives));
-			})
-			.catch(console.log);
+
+			dispatch(getGenNarratives(narratives.slice()));
+
 }
 
 export const reloadBiblio = () => dispatch => {
-		axios.get('/api/biblio')
-			.then(responses => {
-				return responses.data;
-			})
-			.then((bib) => {
-			dispatch(getGenBiblio(bib));
-			})
-			.catch(console.log);
+
+			dispatch(getGenBiblio(biblio.slice()));
+
 }
 
 export const getDetailsNarratives = () => dispatch =>{
 
-	const allDetails = axios.get('/api/details')
-			.then(responses => {
-				return responses.data;
-			})
+			dispatch(getGenDetails(details.slice()));
+			dispatch(getGenNarratives(narratives.slice()));
+			dispatch(getGenImages(images.slice()));
+			dispatch(getGenBiblio(biblio.slice()));
 
-	const allNarratives = axios.get('/api/narratives')
-			.then(responses => {
-				return responses.data;
-			})
-
-	const allImages = axios.get('/api/images')
-			.then(responses => {
-				return responses.data;
-			})
-
-	const allBiblio = axios.get('/api/biblio')
-			.then(responses => {
-				return responses.data;
-			})
-
-	Promise.all([allDetails, allNarratives, allImages, allBiblio])
-		.then((results) => {
-			const details = results[0], narratives = results[1], images=results[2], biblio = results[3];
-			dispatch(getGenDetails(details));
-			dispatch(getGenNarratives(narratives));
-			dispatch(getGenImages(images));
-			dispatch(getGenBiblio(biblio));
-		})
-		.catch(console.log);
 }
 
 export const addBiblio = (biblioObj) => dispatch => {
-		console.log('pre-post', biblioObj);
-
-	axios.post('/api/biblio', biblioObj)
-			.then(responses => {
-				return responses.data;
-			})
-	    .then((site) => {
-	    dispatch(reloadBiblio());
-	    dispatch(saved(true));
-			})
-	   .catch(console.log);
+	//not necessariy outside of editing
 }
 
 export const addSelectLayer = (layer) => dispatch => { //add and load
@@ -712,90 +506,41 @@ export const addAllLayers = (layers) => dispatch => { //load all/clear all to se
 //-----------Site editing dispatches------------------------
 
 export const addNewSite = (siteObj) => dispatch => {
-	console.log('pre-post', siteObj);
-
-	axios.post('/api/sites', siteObj)
-			.then(responses => {
-				return responses.data;
-			})
-	    .then((site) => {
-	    dispatch(loadSites());
-	    dispatch(saved(true));
-			})
-	   .catch(console.log);
+	//not necessariy outside of editing
 }
 
 export const editSite = (id, siteObj) => dispatch => {
-	console.log('pre-put', siteObj);
-
-	axios.put(`/api/sites/${id}`, siteObj)
-			.then(responses => {
-				return responses.data;
-			})
-	    .then((site) => {
-	    dispatch(loadSites());
-			dispatch(getCurrSite(id));
-			})
-	   .catch(console.log);
+	//not necessariy outside of editing
 }
 
 export const addNewSiteCenter = (cx, cy, pastX, pastY) => dispatch => {
-	dispatch(addNewSiteGeo1(cx, cy, pastX, pastY));
+		//not necessariy outside of editing
 }
 
 export const addNewSiteRadius = (radius, radPast) => dispatch => {
-	dispatch(addNewSiteGeo2(radius, radPast));
+		//not necessariy outside of editing
 }
 
 //-----------saved? dispatches------------------------
 
 export const resetSaved = () => dispatch => {
-	dispatch(saved(false));
+		//not necessariy outside of editing
 }
 
 //-----------Narrative dispatches------------------------
 
 export const addNarrative = (narrObj) => dispatch => {
 
-	console.log('pre-post narr', narrObj);
-
-	axios.post('/api/narratives', narrObj)
-			.then(responses => {
-				return responses.data;
-			})
-	    .then((narrative) => {
-	    dispatch(reloadNarratives());
-	    dispatch(saved(true));
-			})
-	   .catch(console.log);
+	//not necessariy outside of editing
 
 }
 
 export const editNarrative = (id, siteObj) => dispatch => {
-	console.log('pre-put', siteObj);
-
-	axios.put(`/api/narratives/${id}`, siteObj)
-			.then(responses => {
-				return responses.data;
-			})
-	    .then((site) => {
-	    dispatch(reloadNarratives());
-			})
-	   .catch(console.log);
+	//not necessariy outside of editing
 }
 
 //-----------Bibliography dispatches------------------------
 
 export const addBibliography = (biblioObj) => dispatch => {
-		console.log('pre-post', biblioObj);
-
-	axios.post('/api/biblio', biblioObj)
-			.then(responses => {
-				return responses.data;
-			})
-	    .then((site) => {
-	    dispatch(reloadBiblio());
-	    dispatch(saved(true));
-			})
-	   .catch(console.log);
+	//not necessariy outside of editing
 }

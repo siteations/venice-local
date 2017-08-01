@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import {Tooltip} from 'react-lightweight-tooltip';
 import IconButton from 'material-ui/IconButton';
 
-import {updatePanelNone, updatePanelSmall, updatePanelLarge, updatePanelStart, updatePanelMid} from '../action-creators/optionActions.js';
-import {updateColor, updateAnno, updateDetail} from '../action-creators/optionActions.js';
+import {updatePanelNone, updatePanelSmall, updatePanelLarge, updatePanelStart, updatePanelMid} from '../action-creators/optionActionsNDB.js';
+import {updateColor, updateAnno, updateDetail} from '../action-creators/optionActionsNDB.js';
 //connect later?
-import {addSelectLayer, deleteSelectLayer, addAllLayers, addHoverSite, setSpecPanel, updateSite} from '../action-creators/siteActions.js';
+import {addSelectLayer, deleteSelectLayer, addAllLayers, addHoverSite, setSpecPanel, updateSite} from '../action-creators/siteActionsNDB.js';
 
 import {updateOffsets, updateOffsetsResidual } from '../action-creators/mapActions.js';
 
@@ -224,7 +224,7 @@ class MapBar extends Component{
 		        			};
 
 		        			return (
-										<div className={each.cn} key={i+'navbutton'} value={each.v} onMouseOver={this.layerOver} onMouseOut={this.layerOut} onTouchTap={this.layerPanel} >
+										<div className={each.cn} key={i+'navbutton'} value={each.v} onTouchTap={this.layerPanel} >
 											<Tooltip content={'toggle '+ each.v} styles={toolstyles}>
 											{each.src !== ' ' &&
 												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} />
@@ -249,7 +249,7 @@ class MapBar extends Component{
 		        			};
 
 		        			return (
-										<div className={each.cn} key={i+'navbutton'} value={each.v} onMouseOver={this.layerOver} onMouseOut={this.layerOut} onTouchTap={this.layerPanel} >
+										<div className={each.cn} key={i+'navbutton'} value={each.v} onTouchTap={this.layerPanel} >
 											<Tooltip content={'toggle '+ each.v} styles={toolstyles}>
 											{each.src !== ' ' &&
 												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} />
@@ -274,7 +274,7 @@ class MapBar extends Component{
 		        			};
 
 		        			return (
-										<div className={each.cn} key={i+'navbutton'} value={each.v} onMouseOver={this.layerOver} onMouseOut={this.layerOut} onTouchTap={this.layerPanel} >
+										<div className={each.cn} key={i+'navbutton'} value={each.v} onTouchTap={this.layerPanel} >
 											<Tooltip content={'toggle '+ each.v} styles={toolstyles}>
 											{each.src !== ' ' &&
 												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} />

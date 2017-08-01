@@ -11,10 +11,10 @@ import LayersList from './LayersList.js';
 
 import {panelsOther} from '../non-db/panelsOther.js';
 
-import {updatePanelNone, updatePanelSmall, updatePanelLarge, updatePanelStart, updatePanelMid} from '../action-creators/optionActions.js';
-import {updateColor, updateAnno, updateDetail} from '../action-creators/optionActions.js';
+import {updatePanelNone, updatePanelSmall, updatePanelLarge, updatePanelStart, updatePanelMid} from '../action-creators/optionActionsNDB.js';
+import {updateColor, updateAnno, updateDetail} from '../action-creators/optionActionsNDB.js';
 //connect later?
-import {addSelectLayer, deleteSelectLayer, addAllLayers, addHoverSite, setSpecPanel, updateSite} from '../action-creators/siteActions.js';
+import {addSelectLayer, deleteSelectLayer, addAllLayers, addHoverSite, setSpecPanel, updateSite} from '../action-creators/siteActionsNDB.js';
 
 import {updateOffsets, updateOffsetsResidual } from '../action-creators/mapActions.js';
 

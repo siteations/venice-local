@@ -3,9 +3,9 @@ import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
 import { centerRescaled, tiling, scaleOps, sitesFiltered } from '../plug-ins/rawTiles.js';
-import {updateSite} from '../action-creators/siteActions.js';
+import {updateSite} from '../action-creators/siteActionsNDB.js';
 import {  setTitlesCore, setTitle, setNarr } from '../action-creators/panelActions.js';
-import { togglePlay, updatePanelSmall } from '../action-creators/optionActions.js';
+import { togglePlay, updatePanelSmall } from '../action-creators/optionActionsNDB.js';
 import {updateZoom, updateTile, updateOffsets, updateCenter, updateCenterScreen, updateWindow, updateWindowOffsets, updateOffsetsResidual, updatePanelOffset} from '../action-creators/mapActions.js';
 
 import Tour from './Tour.js';

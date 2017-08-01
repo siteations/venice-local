@@ -15,8 +15,8 @@ import Header2 from './Header2.js';
 import {Preload} from 'react-preload';
 //import {tilepreload} from '../plug-ins/rawTiles.js';
 
-import {loadLayers, loadSites, addAllLayers, loadFiltered } from '../action-creators/siteActions.js';
-import {getAllToursThemes} from '../action-creators/optionActions.js';
+import {loadLayers, loadSites, addAllLayers, loadFiltered } from '../action-creators/siteActionsNDB.js';
+import {getAllToursThemes} from '../action-creators/optionActionsNDB.js';
 
 
 //var images = tilepreload();

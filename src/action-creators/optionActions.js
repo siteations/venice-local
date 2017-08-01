@@ -2,7 +2,7 @@
 import axios from 'axios';
 import Promise from 'bluebird';
 
-import {saved} from './siteActions.js'; //aws version
+import {saved} from './siteActionsNDB.js'; //aws version
 
 //layer view options
 export const SET_COLOR = "SET_COLOR";

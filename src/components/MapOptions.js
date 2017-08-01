@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import {Tooltip} from 'react-lightweight-tooltip';
 
-import {updateColor, updateAnno, updateDetail, setCurrTour} from '../action-creators/optionActions.js';
+import {updateColor, updateAnno, updateDetail, setCurrTour} from '../action-creators/optionActionsNDB.js';
 import { tiling, scaleOps, sitesFiltered, centerRescaled, reverseCenter } from '../plug-ins/rawTiles.js';
 
 import {updateZoom, updateTile, updateOffsets, updateCenter, updateCenterScreen, updateWindow, updateWindowOffsets, updateOffsetsResidual, updatePanelOffset} from '../action-creators/mapActions.js';

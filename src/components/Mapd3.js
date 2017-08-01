@@ -18,9 +18,9 @@ import {cirMain} from '../non-db/cirTest.js';
 //---------------------------ACTION for DISPATCH---------------------------
 import {updateZoom, updateTile, updateOffsets, updateCenter, updateCenterScreen, updateWindow, updateWindowOffsets, updateOffsetsResidual, updatePanelOffset} from '../action-creators/mapActions.js';
 
-import {updateColor, updateAnno, updateDetail, updatePanelSmall, updatePanelLarge} from '../action-creators/optionActions.js';
+import {updateColor, updateAnno, updateDetail, updatePanelSmall, updatePanelLarge} from '../action-creators/optionActionsNDB.js';
 
-import {loadLayers, updateSite, overlayDetails, loadSites, addAllLayers, loadFiltered, getDetailsNarratives, setDetailId, addNewSiteCenter, addNewSiteRadius } from '../action-creators/siteActions.js';
+import {loadLayers, updateSite, overlayDetails, loadSites, addAllLayers, loadFiltered, getDetailsNarratives, setDetailId, addNewSiteCenter, addNewSiteRadius } from '../action-creators/siteActionsNDB.js';
 
 import { setTitlesCore, setTitle, setNarr } from '../action-creators/panelActions.js';
 
@@ -464,7 +464,7 @@ class MapSVG extends Component {
                                     //onMouseOut={''/*e=>this.hideLabel(e)*/}
                                     onTouchTap={ e=>this.setLabel(e)}
                                     onClick={ e=>this.setLabel(e)}
-                                    onDoubleClick={(this.props.user === null || this.props.user.message)? (e)=>this.selectShowPanel(e, +d.id) : e=> e.preventDefault() }
+                                    onDoubleClick={(e)=>this.selectShowPanel(e, +d.id) }
                                     />
 
 	   						    )

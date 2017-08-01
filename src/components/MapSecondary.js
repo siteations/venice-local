@@ -13,9 +13,9 @@ import { ClipTiles, BackgroundTiles, BackgroundMask, Underlay } from './TileVari
 
 // //---------------------------ACTION for DISPATCH---------------------------
  import {updateZoom, updateTile, updateOffsets, updateCenter, updateCenterScreen, updateWindow, updateWindowOffsets, updateOffsetsResidual, updatePanelOffset} from '../action-creators/mapActions.js';
- import {updateColor, updateAnno, updateDetail, updatePanelSmall, updatePanelLarge} from '../action-creators/optionActions.js';
+ import {updateColor, updateAnno, updateDetail, updatePanelSmall, updatePanelLarge} from '../action-creators/optionActionsNDB.js';
 
- import {loadLayers, updateSite, overlayDetails, loadSites, addAllLayers, loadFiltered, getDetailsNarratives, setDetailId, addNewSiteCenter, addNewSiteRadius } from '../action-creators/siteActions.js';
+ import {loadLayers, updateSite, overlayDetails, loadSites, addAllLayers, loadFiltered, getDetailsNarratives, setDetailId, addNewSiteCenter, addNewSiteRadius } from '../action-creators/siteActionsNDB.js';
 
  import { setTitlesCore, setTitle, setNarr } from '../action-creators/panelActions.js';
 

@@ -3,8 +3,12 @@
 // import Promise from 'bluebird';
 
 import * as tourArray from '../non-db/tours.json';
+import * as sites from '../non-db/sites.json';
+import * as details from '../non-db/details.json';
+import * as images from '../non-db/images.json';
+import * as narratives from '../non-db/narratives.json';
 
-import {saved} from './siteActions.js'; //aws version
+//import {saved} from './siteActionsNDB.js'; //aws version
 
 //layer view options
 export const SET_COLOR = "SET_COLOR";
@@ -155,7 +159,7 @@ export const optionReducer = (prevState = initOptions, action) => {
 		break;
 
 	case GET_CURR_TOUR:
-		newState.currTour = action.tour;
+		newState.currTour = action.tourId;
 		break;
 
 	case SET_ANNO:
@@ -269,9 +273,15 @@ export const getAllToursThemes = () => dispatch => {
 	        tours[site.tourId] = [site];
 	      }
 	    });
+	    console.log('tours?', tours);
 
 			dispatch(getAllTours(tours));
 
+}
+
+export const setCurrTour = (tour) => dispatch => {
+	console.log('got here', tour);
+	dispatch(getTour(tour));
 }
 
 export const addTourEntry = (obj) => dispatch => {

@@ -9,7 +9,7 @@ import { cirMain, cirMinor, clusterTest, narrativeTest } from '../non-db/cirTest
 
 import { spacingFrame } from '../plug-ins/rawDetails.js';
 
-import { getDetailsNarratives } from '../action-creators/siteActions.js';
+import { getDetailsNarratives } from '../action-creators/siteActionsNDB.js';
 
 
 //-----------------------------------component---------------------------------
