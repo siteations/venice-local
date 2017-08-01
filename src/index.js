@@ -20,12 +20,19 @@ import axios from 'axios';
 
 import App from './components/App';
 
+console.log(window, window.outerWidth);
+
 
 render(
    <Provider store={store}>
      <Router>
        <div>
-  		<Route path="/" component={App} />
+       {window.outerWidth > 1199 &&
+  			<Route path="/" component={App} />
+  			}
+  			{window.outerWidth < 1199 &&
+  			<p className="text-center" style={{margin: '20px'}}>create a page to show when device with is less than 1200 (rotate or enlarge to view)</p>
+  			}
 	     </div>
      </Router>
    </Provider>,
