@@ -97,9 +97,9 @@
 },
 {
     "id": 17,
-    "narrativeId": 31,
-    "src": "./img/PLACEHOLDER.jpg",
-    "caption": "Image to come."
+    "narrativeId": 28,
+    "src": "./img/Tarabottik7_809_tp_o2.png",
+    "caption": "Censvra by Tarabotti"
 },
 {
     "id": 18,
@@ -146,14 +146,14 @@
 {
     "id": 25,
     "narrativeId": 38,
-    "src": "./img/PLACEHOLDER.jpg",
-    "caption": "Scotto and Gardano images"
+    "src": "./img/Gardanocase_m2082_p67_1580_tp_o2.png",
+    "caption": "Cantus - Constantii Portae... by Costanzo Porta"
 },
 {
     "id": 26,
     "narrativeId": 38,
-    "src": "./img/PLACEHOLDER.jpg",
-    "caption": "Scotto and Gardano images 2 (etc.)"
+    "src": "./img/Gardanocase_m2082_p67_1580_sig_a2r_o2-2.png",
+    "caption": "Cantus - Constantii Portae... by Costanzo Porta"
 },
 {
     "id": 27,
@@ -268,4 +268,112 @@
     "narrativeId": 25,
     "src": "./img/Eusebio_De%20Evangelica%20Praeparatione%2C%20pg.1r_o2_Inc.%204066%20%28folio%2C%20VAULT%29.png",
     "caption": "De Evangelica Praeparatione by Eusebius"
+},
+{
+    "id": 46,
+    "narrativeId": 23,
+    "src": "./img/Processionwing_zp_635_f85_059_o2.png",
+    "caption": "Processione in Piazza San Marco by Doglioni"
+},
+{
+    "id": 47,
+    "narrativeId": 8,
+    "src": "./img/DogePalacewing_zp_635_f85_057_o2.png",
+    "caption": "The Venetian Doge's Palace by Doglioni"
+},
+{
+    "id": 48,
+    "narrativeId": 45,
+    "src": "./img/SanGiorgioMaggiorewing_zp_635_f85_061_o2.png",
+    "caption": "San Giorgio Maggiore by ..."
+},
+{
+    "id": 49,
+    "narrativeId": 45,
+    "src": "./img/Palladio2wing_zp639_m365_pg_98_99_o2.png",
+    "caption": "San Giorgio Maggiore Cloister by Palladio"
+},
+{
+    "id": 50,
+    "narrativeId": 46,
+    "src": "./img/RedentoreDoglioniwing_zp_635_f85_023_o2.png",
+    "caption": "The Venetian Doge with a view to Redentore by Doglioni"
+},
+{
+    "id": 51,
+    "narrativeId": 0,
+    "src": "./img/Fiammacase_y712_f_439_tp_o2.png",
+    "caption": "Rime spirituali by R.D. Gabriel Fiamma"
+},
+{
+    "id": 52,
+    "narrativeId": 45,
+    "src": "./img/Cassinesecase_bx_2049_b4_b7_1606_tp_o2.png",
+    "caption": "Breuiarium monasticum by the Catholic Church"
+},
+{
+    "id": 53,
+    "narrativeId": 47,
+    "src": "./img/Cassinesecase_bx_2049_b4_b7_1606_tp_o2.png",
+    "caption": "Breuiarium monasticum by the Catholic Church"
+},
+{
+    "id": 54,
+    "narrativeId": 45,
+    "src": "./img/Cassinesecase_bx_2049_b4_b7_1606_folio_7v_o2.png",
+    "caption": "Breuiarium monasticum by the Catholic Church"
+},
+{
+    "id": 55,
+    "narrativeId": 47,
+    "src": "./img/Cassinesecase_bx_2049_b4_b7_1606_folio_7v_o2.png",
+    "caption": "Breuiarium monasticum by the Catholic Church"
+},
+{
+    "id": 56,
+    "narrativeId": 45,
+    "src": "./img/Palladio3wing_zp639_m365_pg_100_o2.png",
+    "caption": "San Giorgio Maggiore Cloister by Palladio"
+},
+{
+    "id": 57,
+    "narrativeId": 45,
+    "src": "./img/Palladio1wing_zp639_m365_tp_o2.png",
+    "caption": "The Four Books of Architecture by Palladio"
+},
+{
+    "id": 58,
+    "narrativeId": 12,
+    "src": "./img/MarriageSeawing_w2359_145_part_1_plt_14_o2.jpg",
+    "caption": "Marriage of the Sea by Canaletto"
+},
+{
+    "id": 59,
+    "narrativeId": 48,
+    "src": "./img/Salutewing_w2359_145_part_1_plt_5_o2.jpg",
+    "caption": "Santa Maria della Salute by Canaletto"
+},
+{
+    "id": 60,
+    "narrativeId": 48,
+    "src": "./img/Caritawing_w2359_145_part_1_plt_3_o2.jpg",
+    "caption": "View of the Grand Canal, from Caritas to Santa Maria della Salute by Canaletto"
+},
+{
+    "id": 61,
+    "narrativeId": 29,
+    "src": "./img/SanRoccowing_w2359_145_part_3_plt_5_o2.jpg",
+    "caption": "San Rocco by Canaletto"
+},
+{
+    "id": 62,
+    "narrativeId": 24,
+    "src": "./img/SMariaFormosawing_w2359_145_part_3_plt_8_o2.jpg",
+    "caption": "Santa Maria Formosa by Canaletto"
+},
+{
+    "id": 63,
+    "narrativeId": 49,
+    "src": "./img/SSGiovanniPaolowing_w2359_145_part_3_plt_1_o2.jpg",
+    "caption": "Santi Giovanni e Paolo by Canaletto"
 }]
