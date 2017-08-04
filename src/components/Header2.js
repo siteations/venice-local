@@ -85,7 +85,7 @@ class Header2 extends Component {
         this.props.setAnno(false);
         this.props.setDetail(false);
         //really?
-          var offs=this.props.map.xyOffsets;
+          var offs=(this.props.map.xyOffsets);
           this.setState({y:offs[1]});
           if (offs[1]<0){ offs[1]=0 ; this.props.setOffsetsR(offs); this.props.setCurrOffsets(offs);}
           console.log(offs);
@@ -98,7 +98,7 @@ class Header2 extends Component {
           this.props.setAnno(true);
           this.props.setDetail(true);
 
-          var offs=this.props.map.xyOffsets;
+          var offs=(this.props.map.xyOffsets);
           var y = this.state.y;
           offs[1]=y ; this.props.setOffsetsR(offs); this.props.setCurrOffsets(offs);
           console.log(offs);
@@ -141,6 +141,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     sites: state.sites,
     options: state.options,
+    map: state.map,
   }
 }
 
