@@ -16,7 +16,7 @@ import * as biblio from '../non-db/biblio.json';
 
 //-------------------CONSTANTS
 
-const	layersFullList = ['parish churches',"basilica", "plague churches", "monastery", "convent", "non-catholic communities", "processions", "printing", "textual consumption" ];
+const	layersFullList = ['churches',"convents & monasteries", "non-catholic communities", "processions", "printing"];
 
 //SITE REDUCER
 
@@ -303,17 +303,13 @@ export const siteReducer = (prevState = initSites, action) => {
 		break;
 
 	case ADD_CURR_LAYERS:
-		let add=action.layer.split(', ');
-		let array = newState.currLayers.concat(add);
+		let array = newState.currLayers.concat(action.layer);
 		newState.currLayers = array;
 		break;
 
 	case RESET_CURR_LAYERS:
 		let arr = newState.currLayers;
-		let layers = action.layer.split(', ');
-		layers.forEach(layer=>{
-			arr.splice(arr.indexOf(layer),1);
-		})
+			arr.splice(arr.indexOf(action.layer),1);
 		newState.currLayers = arr;
 		break;
 
@@ -351,7 +347,7 @@ export const loadSites = () => dispatch => {
 export const loadFilteredSites = (layerArr) => dispatch => { //
 
 			 var selectSites = sites.filter(circle =>{
-					return layerArr.indexOf(circle.type)>-1;
+					return layerArr.indexOf(circle.type)>-1 || layerArr.indexOf(circle.type2)>-1;
 				})
 
 				dispatch(getFilteredSites(selectSites));
@@ -390,6 +386,7 @@ export const loadLayers = () => dispatch => { //loading all
 			let cirLayers = [];
 			sites.forEach(circle=>{
 		    		if (cirLayers.indexOf(circle.type) === -1){cirLayers.push(circle.type)};
+		    		if (cirLayers.indexOf(circle.type2) === -1){cirLayers.push(circle.type2)};
 				})
 			dispatch(getAllLayers(cirLayers));
 }

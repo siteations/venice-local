@@ -38,40 +38,48 @@ class Image extends Component {
   		this.setState({active: index});
   }
 
-	render() {
+render() {
 
-		var img = this.props.image[this.state.active];
+    var img = this.props.image[this.state.active];
     var imgId = (img!==undefined)? img.id : this.props.image[0].id;
     if (img===undefined){this.setState({active: 0});};
-		let biblio = this.props.sites.genBiblio.filter(bib => +bib.imageId === +imgId);
+    let biblio = this.props.sites.genBiblio.filter(bib => +bib.imageId === +imgId);
 
-	return (
-		<div>
-			<div className="text-center">
-				<img src={this.props.image[this.state.active].src} style={{width:`${this.state.widthImg}px`}} onLoad={e=>this.getSize(e)} onChange={e=>this.getSize(e)}/>
-			</div>
-			<div className="row m10">
-				<div className="col-xs-8 col-xs-offset-2 text-center">
-					{this.props.image.length > 1 &&
-						this.props.image.map((image, i)=>{
-							if(i===this.state.active){
-								return <span id={`slider ${i}`} className="fa fa-circle pad10" value="i" onTouchTap={e=>this.switchImg(e)} onClick={e=>this.switchImg(e)}></span>
-							} else {
-								return <span id={`slider ${i}`} className="fa fa-circle-o pad10" value="i" onTouchTap={e=>this.switchImg(e)} onClick={e=>this.switchImg(e)}></span>
-							}
-						})
-					}
-				</div>
-			</div>
-			<h5><span className="Trenda-Bold">Image: </span>{this.props.image[this.state.active].caption}.
-
-			{biblio.length>0 &&
-						<span className="small"> {biblio[0].author} <a href={biblio[0].link}><em>{biblio[0].title}</em></a> {biblio[0].published} {biblio[0].physical} {biblio[0].page}</span>
-			}
-			</h5>
-		</div>
-		);
-	}
+  return (
+    <div>
+      <div className="text-center">
+        <img src={this.props.image[this.state.active].src} style={{width:`${this.state.widthImg}px`}} onLoad={e=>this.getSize(e)} onChange={e=>this.getSize(e)}/>
+      </div>
+      <div className="row m10">
+        <div className="col-xs-8 col-xs-offset-2 text-center">
+          {this.props.image.length > 1 &&
+            this.props.image.map((image, i)=>{
+              if(i===this.state.active){
+                return <span id={`slider ${i}`} className="fa fa-circle pad10" value="i" onTouchTap={e=>this.switchImg(e)} onClick={e=>this.switchImg(e)}></span>
+              } else {
+                return <span id={`slider ${i}`} className="fa fa-circle-o pad10" value="i" onTouchTap={e=>this.switchImg(e)} onClick={e=>this.switchImg(e)}></span>
+              }
+            })
+          }
+        </div>
+      </div>
+      <h5><span className="Trenda-Bold">Image: </span>{this.props.image[this.state.active].caption}</h5>
+          {/* this.props.image[this.state.active].bibliography &&
+            this.props.image[this.state.active]bibliography.split('/').map((text,i) =>{
+                                  if (i%2===0){
+                                    return <span>{text}</span>
+                                  } else {
+                                    return <span><em>{text}</em></span>
+                                  }
+                                })
+                              }<br/>
+          */}
+      <p><span className="Trenda-Bold">View Online: </span>
+                        <a href={this.props.image[this.state.active].link} target="_blank" style={{fontWeight: 'normal'}}>Newberry Catalog</a> . <a href={this.props.image[this.state.active].onlineArchive} target="_blank" style={{fontWeight: 'normal'}}>CARLI digital collections</a><br/><br/>
+                       </p>
+    </div>
+    );
+  }
 }
 
 const mapStateToProps = (state, ownProps) => {

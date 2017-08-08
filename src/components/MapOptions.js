@@ -153,8 +153,8 @@ class MapOps extends Component {
   render(){
     //intPanel
 
-	return (
-	        <div className="mtypeFull center-block text-center">
+    return (
+            <div className="mtypeFull center-block text-center">
                 <h5 style={{fontWeight: 'bold'}}>map</h5>
                 <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.zoom(e, 'in')} onClick={e=>this.zoom(e, 'in')}>
                     <Tooltip content={'zoom in'} styles={toolstyles}>
@@ -192,24 +192,26 @@ class MapOps extends Component {
                 </div>
                 <h5>local<br/>details</h5>
                 <br/>
+                {/*
                 <h5 style={{fontWeight: 'bold'}}>tours</h5>
                 <button className="btn btn-default btn-sm bIconSm" >
                     <Tooltip content={'tour all processions'} styles={toolstyles}>
-                        <img src='./img/ritual-01.svg' className='bImg' value='1' onTouchTap={e=>this.setTour(e)} />
+                        <img src='/img/ritual-01.svg' className='bImg' value='1' onTouchTap={e=>this.setTour(e)} />
                     </Tooltip>
                 </button>
                 <br/>
                 <button className="btn btn-default btn-sm bIconSm" onTouchTap="">
                     <Tooltip content={'tour all printing sites'} styles={toolstyles}>
-                        <img src='./img/books-01.svg' className='bImg' value='2' onTouchTap={e=>this.setTour(e)} />
+                        <img src='/img/books-01.svg' className='bImg' value='2' onTouchTap={e=>this.setTour(e)} />
                     </Tooltip>
                 </button>
                 <br/>
                 <button className="btn btn-default btn-sm bIconSm" onTouchTap="">
                     <Tooltip content={'tour all basilica'} styles={toolstyles}>
-                        <img src='./img/bascilica-01.svg' className='bImg' value='3' onTouchTap={e=>this.setTour(e)} />
+                        <img src='/img/bascilica-01.svg' className='bImg' value='3' onTouchTap={e=>this.setTour(e)} />
                     </Tooltip>
                 </button>
+                */}
 
 
                 {/*
@@ -229,8 +231,8 @@ class MapOps extends Component {
            </div>
 
 
-		)
-	}
+        )
+    }
 }
 
 const mapStateToProps = (state, ownProps) => {

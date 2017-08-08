@@ -31,14 +31,14 @@ class PanelMap extends Component {
   render(){
 
     let obj = this.props.map.mapSite;
-    var height = this.props.map.windowSize[1]*.205;
+    var height = this.props.map.windowSize[1]*.21;
     if (this.props.size==='full') { height = this.props.map.windowSize[1]*.805};
 
-  	return (
-  	     <div className="pad10" style={{overflowY:'scroll', overflowX:'hidden', height: `${height}px`}}>
+    return (
+         <div className="pad10" style={{overflowY:'scroll', overflowX:'hidden', height: `${height}px`}}>
           <div className="row ">
             <div className="col-md-3">
-				    <h5 className="BornholmSandvig pad10">
+            <h5 className="BornholmSandvig pad10">
               {obj.author}, {obj.date}
               </h5>
             </div>
@@ -56,8 +56,8 @@ class PanelMap extends Component {
                 <div className="bIcon text-center inlineBlock" ><img src={obj.src} style={{borderRadius: '5px'}}/></div>
               </div>
               <div className="col-md-9">
-    				    <p>{obj.narrative}</p>
-    				    <br/>
+                <p>{obj.narrative}</p>
+                <br/>
               </div>
             </div>
           }
@@ -76,9 +76,9 @@ class PanelMap extends Component {
               )
             })
           }
-				</div>
+        </div>
 
-  	)
+    )
 
   }
 

@@ -16,29 +16,25 @@ import {setNarr, setTitlesCore} from '../action-creators/panelActions.js';
 import {panelsOther} from '../non-db/panelsOther.js';
 
 let mapButtons0=[
-	{cn:"nIcon flex center middle", v:"intro", src:'./img/intro-01.svg' },
-	{cn:"nIcon flex center middle", v:"prints", src:"./img/print-01.svg" },
-	{cn:"nIcon flex center middle", v:"maps", src:"./img/maps-01.svg" }
+	{cn:"nIcon flex center middle", v:"intro", src:'/img/intro-01.svg' },
+	{cn:"nIcon flex center middle", v:"prints", src:"/img/print-01.svg" },
+	{cn:"nIcon flex center middle", v:"maps", src:"/img/maps-01.svg" }
 	];
 	// {cn:"nSpc", v:'navigate', src:" " },
-	// {cn:"nIcon flex center middle", v:"panel", src:"./img/arrow1-01.svg" },
-	// {cn:"nIcon flex center middle", v:"panel large", src:"./img/arrow2-01.svg" },
+	// {cn:"nIcon flex center middle", v:"panel", src:"/img/arrow1-01.svg" },
+	// {cn:"nIcon flex center middle", v:"panel large", src:"/img/arrow2-01.svg" },
 let mapButtons1=[
-	{cn:"nIcon flex center middle", v:"all layers", src:"./img/all-layers-01.svg" },
-	{cn:"nIcon flex center middle", v:"parish churches", src:"./img/parish-01.svg" },
-	{cn:"nIcon flex center middle", v:"basilica", src:"./img/bascilica-01.svg" },
-	{cn:"nIcon flex center middle", v:"plague churches", src:"./img/plague-01.svg" },
-	{cn:"nIcon flex center middle", v:"monastery", src:"./img/culture-01.svg" },
-	{cn:"nIcon flex center middle", v:"convent", src:"./img/convent-01.svg" },
-	{cn:"nIcon flex center middle", v:"non-catholic communities", src:"./img/non-catholic-01.svg" },
-	{cn:"nIcon flex center middle", v:"processions", src:"./img/ritual-01.svg" },
-	{cn:"nIcon flex center middle", v:"printing", src:"./img/books-01.svg" },
-	{cn:"nIcon flex center middle", v:"textual consumption", src:"./img/ephemera-01.svg" }
+	{cn:"nIcon flex center middle", v:"all layers", src:"/img/all-layers-01.svg" },
+	{cn:"nIcon flex center middle", v:"churches", src:"/img/bascilica-01.svg" },
+	{cn:"nIcon flex center middle", v:"convents & monasteries", src:"/img/convent-01.svg" },
+	{cn:"nIcon flex center middle", v:"non-catholic communities", src:"/img/non-catholic-01.svg" },
+	{cn:"nIcon flex center middle", v:"processions", src:"/img/ritual-01.svg" },
+	{cn:"nIcon flex center middle", v:"printing", src:"/img/ephemera-01.svg" },
 ]
 
 let mapButtons2=[
-	{cn:"nIcon flex center middle", v:"bibliography", src:"./img/menu-01.svg" },
-	{cn:"nIcon flex center middle", v:"credits", src:"./img/credits-01.svg" }
+	{cn:"nIcon flex center middle", v:"bibliography", src:"/img/menu-01.svg" },
+	{cn:"nIcon flex center middle", v:"contributors", src:"/img/credits-01.svg" }
 ];
 
 const toolstyles = {
@@ -119,14 +115,14 @@ class MapBar extends Component{
 			this.props.panelNone();
 		}
 
-		else if ((val === 'intro' || val === 'prints' || val === 'bibliography'|| val === 'credits') && (this.props.options.panelNone)){
+		else if ((val === 'intro' || val === 'bibliography'|| val === 'contributors') && (this.props.options.panelNone)){
 			this.props.panelSmall();
 			this.props.setSpecPanel(val);
 			this.props.updateSite(0);
 			this.props.setTitles(panelsOther[val].title);
 			this.props.updateNarrative(panelsOther[val].obj);
 		}
-		else if ((val === 'intro' || val === 'prints' || val === 'bibliography'|| val === 'credits') && (this.props.options.panelLarge)){
+		else if ((val === 'intro' || val === 'bibliography'|| val === 'contributors') && (this.props.options.panelLarge)){
 			this.props.panelSmall();
 			this.props.setSpecPanel(val);
 			this.props.updateSite(0);
@@ -134,7 +130,7 @@ class MapBar extends Component{
 			this.props.updateNarrative(panelsOther[val].obj);
 		}
 
-		else if ((val === 'intro' || val === 'prints' || val === 'bibliography'|| val === 'credits') && (this.props.options.panelSmall)){
+		else if ((val === 'intro' || val === 'bibliography'|| val === 'contributors') && (this.props.options.panelSmall)){
 			this.props.setSpecPanel(val);
 			this.props.updateSite(0);
 			this.props.setTitles(panelsOther[val].title);
@@ -142,7 +138,7 @@ class MapBar extends Component{
 		}
 
 		//map/intro/biblio options
-		else if ((val === 'maps') && (this.props.options.panelNone || this.props.options.panelSmall)){
+		else if ((val === 'maps' || val === 'prints' ) && (this.props.options.panelNone || this.props.options.panelSmall)){
 			this.props.panelLarge();
 			this.props.setSpecPanel(val);
 			if (val === 'maps' ) {
@@ -155,9 +151,18 @@ class MapBar extends Component{
 					if (offs[1]<0){ offs[1]=0 ; this.props.setOffsetsR(offs); this.props.setCurrOffsets(offs);}
 					console.log(offs);
 				//
+			} else if (val === 'prints' ) {
+
+					this.props.loadSelectAll('clear');
+					this.props.addSelectOne('printing');
+
+					var offs=this.props.map.xyOffsets;
+					this.setState({y:offs[1]});
+					if (offs[1]<0){ offs[1]=0 ; this.props.setOffsetsR(offs); this.props.setCurrOffsets(offs);}
+					console.log(offs);
 			}
 
-		} else if ((val === 'maps') && this.props.options.panelLarge){
+		} else if ((val === 'maps' || val === 'prints' ) && this.props.options.panelLarge){
 			if (val !== this.props.sites.specLayer){
 				this.props.setSpecPanel(val);
 				if (val === 'maps' ) {
@@ -169,15 +174,25 @@ class MapBar extends Component{
 					this.setState({y:offs[1]});
 					if (offs[1]<0){ offs[1]=0 ; this.props.setOffsetsR(offs); this.props.setCurrOffsets(offs);}
 					console.log(offs);
+				} else if (val === 'prints' ) {
 
-					//
+					this.props.loadSelectAll('clear');
+					this.props.addSelectOne('printing');
+
+					var offs=this.props.map.xyOffsets;
+					this.setState({y:offs[1]});
+					if (offs[1]<0){ offs[1]=0 ; this.props.setOffsetsR(offs); this.props.setCurrOffsets(offs);}
+					console.log(offs);
 				}
+
 			} else {
 				this.props.panelSmall();
 				this.props.setSpecPanel('');
 					this.props.setColor(false);
 					this.props.setAnno(true);
 					this.props.setDetail(true);
+
+					this.props.loadSelectAll('add');
 
 					var offs=this.props.map.xyOffsets;
 					var y = this.state.y;
@@ -194,7 +209,7 @@ class MapBar extends Component{
 		} else if (val==='all layers' && this.props.sites.currLayers.length > 0){
 			this.props.loadSelectAll('clear');
 			this.props.setSpecPanel('');
-		} else if (val!=='panel' && val!=='panel large' && val!=='intro' && val !== 'prints' && val!=='biblio' && val!=='maps'&& val!=='credits'){ //individual layers
+		} else if (val!=='panel' && val!=='panel large' && val!=='intro' && val !== 'prints' && val!=='biblio' && val!=='maps'&& val!=='contributors'){ //individual layers
 			if (this.props.sites.currLayers.indexOf(val)<0){ //not in add
 					this.props.addSelectOne(val);
 					this.props.setSpecPanel('');
@@ -214,18 +229,19 @@ class MapBar extends Component{
 		        		{mapButtons0.map((each,i)=>{
 
 		        			let imgClass;
+		        			let disabled = false;
 
-		        			if (this.props.options.panelLarge && each.v ==='panel'){
+		        			if ((this.props.options.panelLarge && each.v ==='panel')||(each.v !== 'maps' && this.props.sites.specLayer === 'maps')||(each.v !== 'prints' && this.props.sites.specLayer === 'prints')){
 		        				imgClass='opacity25';
-		        			} else if (each.v !== 'maps' && this.props.sites.specLayer === 'maps'){
-		        				imgClass='opacity25';
-		        			} else if ((each.v ==='panel large' && !this.props.options.panelLarge)||(each.v ==='panel' && this.props.options.panelNone)) {
+		        				disabled = true;
+		        			}
+		        			else if ((each.v ==='panel large' && !this.props.options.panelLarge)||(each.v ==='panel' && this.props.options.panelNone)) {
 		        				imgClass='rotate';
 		        			};
 
 		        			return (
-										<div className={each.cn} key={i+'navbutton'} value={each.v} onTouchTap={this.layerPanel} >
-											<Tooltip content={'toggle '+ each.v} styles={toolstyles}>
+										<div className={each.cn} key={i+'navbutton'} value={each.v} onMouseOver="" onMouseOut="" onTouchTap={(disabled)? null :this.layerPanel}>
+											<Tooltip content={(disabled)? each.v+' disabled': 'toggle '+ each.v} styles={toolstyles}>
 											{each.src !== ' ' &&
 												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} />
 											}
@@ -239,18 +255,19 @@ class MapBar extends Component{
 		        		{mapButtons1.map((each,i)=>{
 
 		        			let imgClass;
+		        			let disabled = false;
 
-		        			if (this.props.options.panelLarge && each.v ==='panel'){
+		        			if ((this.props.options.panelLarge && each.v ==='panel')||(each.v !== 'maps' && this.props.sites.specLayer === 'maps')||(each.v !== 'prints' && this.props.sites.specLayer === 'prints')){
 		        				imgClass='opacity25';
-		        			} else if (each.v !== 'maps' && this.props.sites.specLayer === 'maps'){
-		        				imgClass='opacity25';
-		        			} else if ((each.v ==='panel large' && !this.props.options.panelLarge)||(each.v ==='panel' && this.props.options.panelNone)) {
+		        				disabled = true;
+		        			}
+		        			else if ((each.v ==='panel large' && !this.props.options.panelLarge)||(each.v ==='panel' && this.props.options.panelNone)) {
 		        				imgClass='rotate';
 		        			};
 
 		        			return (
-										<div className={each.cn} key={i+'navbutton'} value={each.v} onTouchTap={this.layerPanel} >
-											<Tooltip content={'toggle '+ each.v} styles={toolstyles}>
+										<div className={each.cn} key={i+'navbutton'} value={each.v} onMouseOver="" onMouseOut="" onTouchTap={(disabled)? null :this.layerPanel} >
+											<Tooltip content={(disabled)? each.v+' disabled': 'toggle '+ each.v} styles={toolstyles}>
 											{each.src !== ' ' &&
 												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} />
 											}
@@ -264,18 +281,19 @@ class MapBar extends Component{
 		        		{mapButtons2.map((each,i)=>{
 
 		        			let imgClass;
+		        			let disabled = false;
 
-		        			if (this.props.options.panelLarge && each.v ==='panel'){
+		        			if ((this.props.options.panelLarge && each.v ==='panel')||(each.v !== 'maps' && this.props.sites.specLayer === 'maps')||(each.v !== 'prints' && this.props.sites.specLayer === 'prints')){
 		        				imgClass='opacity25';
-		        			} else if (each.v !== 'maps' && this.props.sites.specLayer === 'maps'){
-		        				imgClass='opacity25';
-		        			} else if ((each.v ==='panel large' && !this.props.options.panelLarge)||(each.v ==='panel' && this.props.options.panelNone)) {
+		        				disabled = true;
+		        			}
+		        			else if ((each.v ==='panel large' && !this.props.options.panelLarge)||(each.v ==='panel' && this.props.options.panelNone)) {
 		        				imgClass='rotate';
 		        			};
 
 		        			return (
-										<div className={each.cn} key={i+'navbutton'} value={each.v} onTouchTap={this.layerPanel} >
-											<Tooltip content={'toggle '+ each.v} styles={toolstyles}>
+										<div className={each.cn} key={i+'navbutton'} value={each.v} onMouseOver="" onMouseOut="" onTouchTap={(disabled)? null :this.layerPanel} >
+											<Tooltip content={(disabled)? each.v+' disabled': 'toggle '+ each.v} styles={toolstyles}>
 											{each.src !== ' ' &&
 												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} />
 											}

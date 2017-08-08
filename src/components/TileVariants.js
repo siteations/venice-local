@@ -11,7 +11,7 @@ xlinkHref = {`/img/color/${tile.z}/map_${tile.x}_${tile.y}.jpg`}
 
 export const ClipTiles = (props) => {
     //props.data, props.wSize, props.tSize, props.clip
-	return (
+    return (
             <g>
             { props.data.map((tile, i)=>{
 
@@ -30,7 +30,7 @@ export const ClipTiles = (props) => {
 
                     return (
                             <image
-                            xlinkHref = {`./img/${props.name}/${tile.z}-${tile.x}-${tile.y}.jpg`}
+                            xlinkHref = {`/img/${props.name}/${tile.z}-${tile.x}-${tile.y}.jpg`}
                                 width={props.tSize}
                                     height={props.tSize}
                                     x = { tile.xpos }
@@ -45,7 +45,7 @@ export const ClipTiles = (props) => {
                 })
             }
             </g>
-	        )
+            )
 };
 
 export const BackgroundTiles = (props) => {
@@ -68,7 +68,7 @@ export const BackgroundTiles = (props) => {
 
                     return (
                             <image
-                                xlinkHref = {`./img/${props.name}/${tile.z}-${tile.x}-${tile.y}.jpg`}
+                                xlinkHref = {`/img/${props.name}/${tile.z}-${tile.x}-${tile.y}.jpg`}
                                 width={props.tSize}
                                     height={props.tSize}
                                     x = { tile.xpos }
@@ -92,7 +92,7 @@ export const BackgroundMask = (props) => {
             x = { 0 }
             y = { 0}
             fill="#21160b"
-            opacity={(props.color===false)? .65 : .35 }
+            opacity={(props.color===false)? .5 : .35 }
         />
            )
 };
@@ -101,7 +101,7 @@ export const Underlay = (props) => {
     //props.wSize, props.color
     return(
            <image
-            xlinkHref = {`./img/${props.name}.jpg`}
+            xlinkHref = {`/img/${props.name}.jpg`}
                 width={props.tSize*(scaleOps[props.currZoom][0]+1)}
                     height={props.tSize*(scaleOps[props.currZoom][1]+1)}
                     x = { -1 * props.xyOffsets[0] }

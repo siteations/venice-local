@@ -42,7 +42,7 @@ class Header2 extends Component {
     e.preventDefault();
    let val = (e.target.attributes.value.value);
 
-   if ((val === 'intro' || val === 'bibliography'|| val === 'credits' || val === 'prints')){
+   if ((val === 'intro' || val === 'bibliography'|| val === 'contributors')){
 
       if (!this.props.options.panelSmall){this.props.panelSmall()};
       this.props.setColor(false);
@@ -59,6 +59,7 @@ class Header2 extends Component {
       this.props.setColor(false);
       this.props.setAnno(true);
       this.props.setDetail(true);
+      this.props.loadSelectAll('add');
 
       this.props.setSpecPanel('');
       //12 is san marco
@@ -74,7 +75,7 @@ class Header2 extends Component {
       this.props.setTitles(site.name.split('.'));
       this.props.updateNarrative(narrative);
 
-    } else if (val === 'maps'){
+    } else if (val === 'maps' || val === 'prints'){
 
       if (val !== this.props.sites.specLayer){
       this.props.panelLarge();
@@ -84,13 +85,23 @@ class Header2 extends Component {
         this.props.setColor(true);
         this.props.setAnno(false);
         this.props.setDetail(false);
-        //really?
-          var offs=(this.props.map.xyOffsets);
+
+          var offs=this.props.map.xyOffsets;
           this.setState({y:offs[1]});
           if (offs[1]<0){ offs[1]=0 ; this.props.setOffsetsR(offs); this.props.setCurrOffsets(offs);}
-          console.log(offs);
-        //
+
+        } else if (val === 'prints' ) {
+
+          this.props.loadSelectAll('clear');
+          this.props.addSelectOne('printing');
+
+          var offs=this.props.map.xyOffsets;
+          this.setState({y:offs[1]});
+          if (offs[1]<0){ offs[1]=0 ; this.props.setOffsetsR(offs); this.props.setCurrOffsets(offs);}
+
         }
+
+
       } else {
         this.props.panelSmall();
         this.props.setSpecPanel('intro');
@@ -98,10 +109,12 @@ class Header2 extends Component {
           this.props.setAnno(true);
           this.props.setDetail(true);
 
-          var offs=(this.props.map.xyOffsets);
+          this.props.loadSelectAll('add');
+
+          var offs=this.props.map.xyOffsets;
           var y = this.state.y;
           offs[1]=y ; this.props.setOffsetsR(offs); this.props.setCurrOffsets(offs);
-          console.log(offs);
+
       }
 
     }
@@ -111,7 +124,7 @@ class Header2 extends Component {
   render(){
 
   return (
-	        <div className="row flex bottom header">
+          <div className="row flex bottom header">
                         <div className="col-xs-8">
                                 <h2 className="closerT"><span className="BornholmSandvig">Merlo's Map </span><span className="small texta" style={{color: '#352c1a'}}> The Religious Geography of Venice</span></h2>
                           <LayersList layers={this.props.sites.currLayers} type="span" />
@@ -125,15 +138,15 @@ class Header2 extends Component {
                           <div className="row flex around" style={{marginBottom:'5px'}}>
                             <span className="texta m10 bNav" value="sites" onTouchTap={this.changePanel}>Sited Practices</span>
                             <span className="texta m10 bNav" value="bibliography" onTouchTap={this.changePanel}>Bibliography</span>
-                            <span className="texta m10 bNav" value="credits" onTouchTap={this.changePanel}>Research Credits</span>
+                            <span className="texta m10 bNav" value="contributors" onTouchTap={this.changePanel}>Contributors</span>
                           </div>
                         </div>
-	        	{/*<div className="col-lg-1">
-        			<h4 className="BornholmSandvig closerT text-right ">Layers:</h4>
-        			<p className="closerB text-right"> </p>
-        		</div>*/}
-	        </div>
-	        )
+            {/*<div className="col-lg-1">
+              <h4 className="BornholmSandvig closerT text-right ">Layers:</h4>
+              <p className="closerB text-right"> </p>
+            </div>*/}
+          </div>
+          )
   }
 }
 

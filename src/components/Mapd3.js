@@ -25,13 +25,13 @@ import {loadLayers, updateSite, overlayDetails, loadSites, addAllLayers, loadFil
 import { setTitlesCore, setTitle, setNarr } from '../action-creators/panelActions.js';
 
 class MapSVG extends Component {
-	constructor(props) {
+    constructor(props) {
         super(props);
         this.state = { // more or less temporary var for map manipulation
-        	mouseDivloc: [0,0],
-        	mouseLast: [0,0],
-        	mousePast: [0,0],
-        	mousePos: [0,0],
+            mouseDivloc: [0,0],
+            mouseLast: [0,0],
+            mousePast: [0,0],
+            mousePos: [0,0],
             drag: '',
             trig: false,
             labelClick: false,
@@ -92,71 +92,71 @@ class MapSVG extends Component {
     }
 
     mouseLoc(e) {
-    	e.preventDefault();
+        e.preventDefault();
         var x, y;
         if (e.type==='mouseup' || e.type==="mousedown"){ x=e.clientX; y=e.clientY };
         if (e.type==='touchstart' || e.type==="touchend"){ x=e.changedTouches[0].clientX; y=e.changedTouches[0].clientY };
 
-    	let sele = window.document.getElementById("mapWin").attributes[0].ownerElement;
-    	var mousePos = [x-sele.offsetLeft, y-sele.offsetTop];
-    	this.setState({mouseDivloc: mousePos});
+        let sele = window.document.getElementById("mapWin").attributes[0].ownerElement;
+        var mousePos = [x-sele.offsetLeft, y-sele.offsetTop];
+        this.setState({mouseDivloc: mousePos});
 
-    	(e.type === 'mousedown'|| e.type==='touchstart')? this.setState({drag: 'start'}) : this.setState({drag: ''});
-    	if (e.type === 'mouseup'|| e.type==='touchend') {
+        (e.type === 'mousedown'|| e.type==='touchstart')? this.setState({drag: 'start'}) : this.setState({drag: ''});
+        if (e.type === 'mouseup'|| e.type==='touchend') {
             this.setState({mouseLast: mousePos});
             this.props.setOffsetsR(this.props.map.xyOffsets);
         };
     }
 
     drag(e) {
-    	e.preventDefault();
+        e.preventDefault();
         var x, y;
         if (e.type==='mousemove'){ x=e.clientX; y=e.clientY };
         if (e.type==='touchmove'){ x=e.targetTouches[0].clientX; y=e.targetTouches[0].clientY };
 
-    	let [lastX, lastY] = this.props.map.xyOffsetsR;
-    	var sele = window.document.getElementById("mapWin").attributes[0].ownerElement;
-    	//var mousePos = [e.screenX-sele.offsetLeft, e.screenY-sele.offsetTop];
+        let [lastX, lastY] = this.props.map.xyOffsetsR;
+        var sele = window.document.getElementById("mapWin").attributes[0].ownerElement;
+        //var mousePos = [e.screenX-sele.offsetLeft, e.screenY-sele.offsetTop];
         var mousePos = [x-sele.offsetLeft, y-sele.offsetTop];
-    	let offX = this.state.mouseDivloc[0] - mousePos[0] + lastX;
-    	let offY = this.state.mouseDivloc[1] - mousePos[1] + lastY;
+        let offX = this.state.mouseDivloc[0] - mousePos[0] + lastX;
+        let offY = this.state.mouseDivloc[1] - mousePos[1] + lastY;
 
-    	if (this.state.drag === 'start') {
-    		this.setState({drag:'drag'});
+        if (this.state.drag === 'start') {
+            this.setState({drag:'drag'});
             this.props.setCurrOffsets(this.props.map.xyOffsetsR);
-    	}	else if (this.state.drag === 'drag'){
-    		this.props.setCurrOffsets([offX, offY]);
-    	}
+        }   else if (this.state.drag === 'drag'){
+            this.props.setCurrOffsets([offX, offY]);
+        }
     }
 
     zoomScroll(e) {
-    	e.preventDefault();
-    	var sele = window.document.getElementById("mapWin").attributes[0].ownerElement;
+        e.preventDefault();
+        var sele = window.document.getElementById("mapWin").attributes[0].ownerElement;
         var mousePos = [e.clientX-sele.offsetLeft, e.clientY-sele.offsetTop];
-    	/*
-    	mouseposition + offsets => location on map
-    	tile position = Math.floor(location/tilesize)
-    	*/
-    	let curX = mousePos[0]+this.props.map.xyOffsets[0], curY = mousePos[1]+this.props.map.xyOffsets[1];
-    	let resX = curX/this.props.map.tileSize, resY = curY/this.props.map.tileSize;
-    	let mosPos = mousePos;
+        /*
+        mouseposition + offsets => location on map
+        tile position = Math.floor(location/tilesize)
+        */
+        let curX = mousePos[0]+this.props.map.xyOffsets[0], curY = mousePos[1]+this.props.map.xyOffsets[1];
+        let resX = curX/this.props.map.tileSize, resY = curY/this.props.map.tileSize;
+        let mosPos = mousePos;
 
-    	let curr = this.props.map.currZoom, pix = this.props.map.tileSize, oX =this.props.map.xyOffsets[0], oY=this.props.map.xyOffsets[1];
+        let curr = this.props.map.currZoom, pix = this.props.map.tileSize, oX =this.props.map.xyOffsets[0], oY=this.props.map.xyOffsets[1];
 
-    	if (e.deltaY>1) { //zoom in
-    		pix += 2, oX += 2*resX, oY += 2*resY;
-    	if (pix>=256){ curr++; pix=128 }
-    	if (curr>6){ curr=6; pix=256; oX = this.props.map.xyOffsets[0]; oY = this.props.map.xyOffsets[1] };
+        if (e.deltaY>1) { //zoom in
+            pix += 2, oX += 2*resX, oY += 2*resY;
+        if (pix>=256){ curr++; pix=128 }
+        if (curr>6){ curr=6; pix=256; oX = this.props.map.xyOffsets[0]; oY = this.props.map.xyOffsets[1] };
 
-    	} else if (e.deltaY<1) { //zoom out
-    		pix -= 2, oX -= 2*resX, oY -= 2*resY;
-    	if (pix<=128){ curr--; pix=256 }
-    	if (curr<2){ curr=2; pix=128; oX = this.props.map.xyOffsets[0]; oY = this.props.map.xyOffsets[1] };
-    	} else {
-    		mosPos = mousePos;
-    	}
+        } else if (e.deltaY<1) { //zoom out
+            pix -= 2, oX -= 2*resX, oY -= 2*resY;
+        if (pix<=128){ curr--; pix=256 }
+        if (curr<2){ curr=2; pix=128; oX = this.props.map.xyOffsets[0]; oY = this.props.map.xyOffsets[1] };
+        } else {
+            mosPos = mousePos;
+        }
 
-    	this.setState({ mousePast: mousePos, mousePos:mosPos });
+        this.setState({ mousePast: mousePos, mousePos:mosPos });
         this.props.setOffsetsR([oX, oY]);
         this.props.setCurrOffsets([oX, oY]);
         this.props.setCurrZoom(curr);
@@ -267,8 +267,8 @@ class MapSVG extends Component {
     }
 
     showLabel(e){
-    	e.preventDefault();
-    	let name = e.target.attributes.value.value.split('.');
+        e.preventDefault();
+        let name = e.target.attributes.value.value.split('.');
         let siteId = e.target.attributes.id.value;
         this.props.setTitles(name);
 
@@ -281,9 +281,9 @@ class MapSVG extends Component {
     }
 
     hideLabel(e){
-    	e.preventDefault();
+        e.preventDefault();
         if (this.props.sites.currSiteOn===false){
-    	this.props.setTitles('', '');
+        this.props.setTitles('', '');
         this.props.updateSite(0);
         }
     }
@@ -365,7 +365,7 @@ class MapSVG extends Component {
 
         //minor site/tile filtering at the top of the map... as is fairly often updated
 
-    	const tiles = tiling(this.props.map.currZoom, this.props.map.tileSize, this.props.map.windowSize, this.props.map.xyOffsets);
+        const tiles = tiling(this.props.map.currZoom, this.props.map.tileSize, this.props.map.windowSize, this.props.map.xyOffsets);
         const cirNew = sitesFiltered(this.props.map.xyOffsets, this.props.sites.allSites, this.props.sites.currLayers, tiles[0].percent);
 
         let currentSite = {} ;
@@ -376,16 +376,23 @@ class MapSVG extends Component {
 
         //console.log('results?', this.props.map.windowSize, currentSite, clipDetails, details);
         //console.log('results?', currentSite);
+        var height=this.props.map.windowSize[1];
+        if (this.props.sites.specLayer==='maps' || this.props.sites.specLayer==='prints'){var height = height*.7};
 
-    	return (
+        return (
 
-    	<div className={this.props.baseClass} ref="size" id="mapWin" onAnimationEnd = {e=> this.refSize(e) } >
+        <div className={this.props.baseClass} ref="size" id="mapWin" onAnimationEnd = {e=> this.refSize(e) } >
         {this.props.sites.specLayer==='maps' &&
-              <div style={{height: `${this.props.map.windowSize[1]*.06}px`}}>
-              <h3 className="BornholmSandvig pad10" > Cartographic Elements: Merlo Map (1676)</h3>
+              <div style={{height: `${this.props.map.windowSize[1]*.05}px`}}>
+              <h3 className="BornholmSandvig pad10" style={{marginTop:'15px'}} > Cartographic Elements: Merlo Map (1676)</h3>
               </div>
         }
-    	   <div className="offset border3"
+        {this.props.sites.specLayer==='prints' &&
+              <div style={{height: `${this.props.map.windowSize[1]*.05}px`}}>
+              <h3 className="BornholmSandvig pad10" style={{marginTop:'15px'}} > Printing in Venice: A Tour</h3>
+              </div>
+        }
+           <div className="offset border3"
            //multi-touch for mobile device
            onTouchStart = {e=>this.mouseLoc(e)} //onMouseDown
            onTouchEnd = {e=>this.mouseLoc(e)} //onMouseUp
@@ -405,16 +412,16 @@ class MapSVG extends Component {
            onClick={(e)=>e.preventDefault()}
            >
 
-	    	   <svg width={this.props.map.windowSize[0]} height={(this.props.sites.specLayer==='maps')? this.props.map.windowSize[1]*.7 : this.props.map.windowSize[1]} xmlnsXlink='http://www.w3.org/1999/xlink' >
-	    	   		<defs>
+               <svg width={this.props.map.windowSize[0]} height={height} xmlnsXlink='http://www.w3.org/1999/xlink' >
+                    <defs>
                         <filter id="greyscale">
                             <feColorMatrix type="saturate" values="0" />
                         </filter>
-	    	   			<clipPath id="myClip">
-	    	   				// {cirNew &&
-	    	   					cirNew.map((d,i) => <circle stroke="#000000" cx={d.cx} cy={d.cy} r={d.r} key={`circClip${i}`}/>)
-	    	   				}
-					    </clipPath>
+                        <clipPath id="myClip">
+                            // {cirNew &&
+                                cirNew.map((d,i) => <circle stroke="#000000" cx={d.cx} cy={d.cy} r={d.r} key={`circClip${i}`}/>)
+                            }
+                        </clipPath>
                         {clipDetails.map(d=>{
                             // return (
                             // <clipPath id={d.id}>
@@ -429,12 +436,12 @@ class MapSVG extends Component {
 
                         })
                         }
-	    	   		</defs>
+                    </defs>
 
                     <Underlay tSize={this.props.map.tileSize} currZoom={this.props.map.currZoom} xyOffsets={this.props.map.xyOffsets} name="merlo" color={this.props.options.color} />
 
-	    	   		<g className="workingTiles" >
-    	    	   		{tiles &&
+                    <g className="workingTiles" >
+                        {tiles &&
                             <BackgroundTiles data={tiles} name='merlo' wSize={this.props.map.windowSize} tSize={this.props.map.tileSize} color={this.props.options.color} />
                         }
                         {this.props.options.anno &&
@@ -442,17 +449,17 @@ class MapSVG extends Component {
                         }
                         {tiles && this.props.options.anno &&
                             <ClipTiles data={tiles} wSize={this.props.map.windowSize} name='merlo' tSize={this.props.map.tileSize} clip="url(#myClip)" opacity={1} action=""/>
-    	    	   		}
-	    	   		</g>
+                        }
+                    </g>
 
-	    	   		<g className="allLabelCircs" >
+                    <g className="allLabelCircs" >
                     {this.props.options.anno && cirNew &&
-	   					cirNew.map(d=>{
+                        cirNew.map(d=>{
                             //strokeWidth={Math.pow(this.state.currentZoomLevel,2)/2}
                             //console.log(d.id, currentSite)
 
-	   						return (
-	   						   		<circle className={(d.id===this.props.sites.currSite)? 'circHLThick' : 'circHL' }
+                            return (
+                                    <circle className={(d.id===this.props.sites.currSite)? 'circHLThick' : 'circHL' }
                                     cx={d.cx}
                                     cy={d.cy}
                                     r={d.r}
@@ -463,28 +470,28 @@ class MapSVG extends Component {
                                     //onMouseOver = {e=>this.showLabel(e)}
                                     //onMouseOut={''/*e=>this.hideLabel(e)*/}
                                     onTouchTap={ e=>this.setLabel(e)}
-                                    onClick={ e=>this.setLabel(e)}
-                                    onDoubleClick={(e)=>this.selectShowPanel(e, +d.id) }
+                                    //onClick={ e=>this.setLabel(e)}
+                                    onDoubleClick={(e)=>this.selectShowPanel(e, +d.id)}
                                     />
 
-	   						    )
-	   					})
+                                )
+                        })
                     }
                     {this.props.options.anno && cirNew &&
 
-	   					cirNew.map(d=>{
-	   						if (+this.props.sites.currSite === +d.id){
-	   						return (
-	   						   			<g key={`label${d.id}`}>
-			   						   		<text x={d.cx+d.r+14} y={d.cy} className="textHL" fontSize={21} >{this.props.panel.title}</text>
-			   						   		<text x={d.cx+d.r+14} y={d.cy+18} className="textSHL" fontSize={12} >{this.props.panel.subtitle}</text>
+                        cirNew.map(d=>{
+                            if (+this.props.sites.currSite === +d.id){
+                            return (
+                                        <g key={`label${d.id}`}>
+                                            <text x={d.cx+d.r+14} y={d.cy} className="textHL" fontSize={21} >{this.props.panel.title}</text>
+                                            <text x={d.cx+d.r+14} y={d.cy+18} className="textSHL" fontSize={12} >{this.props.panel.subtitle}</text>
                                             {this.props.options.annoZoom &&
                                             <DetailOver clipDetails={clipDetails} details={details} action={this.loadPanel} />
                                             }
-		   						   		</g>
-	   						    )}
-	   					})
-	   				}
+                                        </g>
+                                )}
+                        })
+                    }
                     {this.props.sites.newCx &&
 
                                     <circle className='circHLThick'
@@ -496,18 +503,24 @@ class MapSVG extends Component {
                                     />
 
                     }
-	   				</g>
-	    	   </svg>
-    	   </div>
+                    </g>
+               </svg>
+           </div>
            {this.props.sites.specLayer==='maps' &&
               <div className="">
               <h5 className="BornholmSandvig pad10" > Cartographic Tour: <span className="Trenda-Regular">Site {this.props.map.mapSite.id} of {this.props.map.mapTourAll.length}, {this.props.map.mapSite.author}</span></h5>
               <Tour type="maps" />
               </div>
             }
-    	 </div>
+            {this.props.sites.specLayer==='prints' &&
+              <div className="">
+              <h5 className="BornholmSandvig pad10" > Print Tour: </h5>
+              <Tour type="prints" />
+              </div>
+            }
+         </div>
 
-    	)
+        )
     }
 }
 

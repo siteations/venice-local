@@ -29,13 +29,13 @@ export const siteSeed = [ // this should be akin to json entries, minus name, et
 ];
 
 export const detailSeed = [
-	{id:1, nameH: 'Customs', srcThumb:'./img/placeholder_01sm.jpg', clusterId: 1, },
-	{id:2, nameH: 'Publications', srcThumb:'./img/placeholder_02sm.jpg', clusterId: 1, },
-	{id:3, nameH: 'Observations', srcThumb:'./img/placeholder_03sm.jpg', clusterId: 1, },
-	{id:4, nameH: 'Dress', srcThumb:'./img/placeholder_05sm.jpg', clusterId: 1, },
-	{id:5, nameH: 'Test', srcThumb:'./img/placeholder_01sm.jpg', clusterId: 2, },
-	{id:6, nameH: 'Test', srcThumb:'./img/placeholder_02sm.jpg', clusterId: 2, },
-	{id:7, nameH: 'Test', srcThumb:'./img/placeholder_03sm.jpg', clusterId: 3, }
+	{id:1, nameH: 'Customs', srcThumb:'/img/placeholder_01sm.jpg', clusterId: 1, },
+	{id:2, nameH: 'Publications', srcThumb:'/img/placeholder_02sm.jpg', clusterId: 1, },
+	{id:3, nameH: 'Observations', srcThumb:'/img/placeholder_03sm.jpg', clusterId: 1, },
+	{id:4, nameH: 'Dress', srcThumb:'/img/placeholder_05sm.jpg', clusterId: 1, },
+	{id:5, nameH: 'Test', srcThumb:'/img/placeholder_01sm.jpg', clusterId: 2, },
+	{id:6, nameH: 'Test', srcThumb:'/img/placeholder_02sm.jpg', clusterId: 2, },
+	{id:7, nameH: 'Test', srcThumb:'/img/placeholder_03sm.jpg', clusterId: 3, }
 
 ];
 
@@ -88,37 +88,37 @@ export const imageSeed = [
 	{
 		id: 1,
 		imageSeries: 1,
-		src: './img/placeholder_06.jpg ',
+		src: '/img/placeholder_06.jpg ',
 		caption: 'lorem ipsum',
 	},
 	{
 		id: 2,
 		imageSeries: 2,
-		src:'./img/placeholder_01.jpg' ,
+		src:'/img/placeholder_01.jpg' ,
 		caption: 'lorem ipsum',
 	},
 	{
 		id: 3,
 		imageSeries: 2,
-		src:'./img/placeholder_04.jpg' ,
+		src:'/img/placeholder_04.jpg' ,
 		caption: 'lorem ipsum',
 	},
 	{
 		id: 4,
 		imageSeries: 3,
-		src:'./img/placeholder_02.jpg' ,
+		src:'/img/placeholder_02.jpg' ,
 		caption: 'lorem ipsum',
 	},
 	{
 		id: 5,
 		imageSeries: 4,
-		src:'./img/placeholder_03.jpg' ,
+		src:'/img/placeholder_03.jpg' ,
 		caption: 'lorem ipsum',
 	},
 	{
 		id: 6,
 		imageSeries: 5,
-		src:'./img/placeholder_05.jpg' ,
+		src:'/img/placeholder_05.jpg' ,
 		caption: 'lorem ipsum',
 	},
 
