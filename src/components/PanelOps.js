@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
-import  mapSites  from '../non-db/mapSites.js';
+//import  mapSites  from '../non-db/mapSites.js';
+import  mapSites  from '../non-db/mapSitesScreen.js';
 import  printSites  from '../non-db/printSites.js';
 
 import { setPanelSizing } from '../action-creators/panelActions.js';
@@ -56,7 +57,7 @@ class PanelB extends Component {
               </div>
               {this.props.map.mapSite.id > 2 && this.props.sites.specLayer==='maps' &&
               <div className="whiteBackground">
-                <MapSecondary height={.7} width={1} />
+                <MapSecondary height={.775} width={1} />
               </div>
               }
               {this.props.map.mapSite.id > 2 && this.props.sites.specLayer==='maps' &&

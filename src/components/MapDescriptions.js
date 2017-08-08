@@ -31,11 +31,11 @@ class PanelMap extends Component {
   render(){
 
     let obj = this.props.map.mapSite;
-    var height = this.props.map.windowSize[1]*.21; //.14 for screen
+    var height = this.props.map.windowSize[1]*.14; //.14 for screen
     if (this.props.size==='full') { height = this.props.map.windowSize[1]*.805};
 
     return (
-         <div className="pad10" style={{overflowY:'scroll', overflowX:'hidden', height: `${height}px`}}>
+         <div className="pad10" style={{overflowY:'auto', overflowX:'hidden', height: `${height}px`}}>
           <div className="row ">
             <div className="col-md-3">
             <h5 className="BornholmSandvig pad10">

@@ -1,0 +1,8 @@
+differences in code for screen:
+Mapd3, MapDescriptions, PanelOps - height percentage change
+No contact on footer
+Don't need nav on header (leave, hidden)
+
+Different CSS from index.js
+
+MapSites.json updated for MapSitesScreen.js on tour and mapActions, etc.

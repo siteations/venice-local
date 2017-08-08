@@ -1,4 +1,4 @@
-import mapSites from '../non-db/mapSites.js';
+import mapSites from '../non-db/mapSitesScreen.js';
 import printSites from '../non-db/printSites.js';
 
 //DATABASE AND NON-DATABASE VERSION ARE THE SAME

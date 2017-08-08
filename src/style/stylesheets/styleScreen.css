@@ -791,6 +791,18 @@ p {
 	font-size: 1.1rem;
 }
 
+h5 {
+	font-size: 1.05rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
 .small {
 	font-size: 95%;
+}
+
+.hLinks {
+	display: none;
 }

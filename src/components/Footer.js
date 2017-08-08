@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux';
-import Contact from './Contact.js';
+//import Contact from './Contact.js';
 
 import { centerRescaled, tiling, scaleOps, sitesFiltered } from '../plug-ins/rawTiles.js';
 import {updateSite} from '../action-creators/siteActionsNDB.js';
@@ -9,7 +9,6 @@ import {  setTitlesCore, setTitle, setNarr } from '../action-creators/panelActio
 import { togglePlay, updatePanelSmall } from '../action-creators/optionActionsNDB.js';
 import {updateZoom, updateTile, updateOffsets, updateCenter, updateCenterScreen, updateWindow, updateWindowOffsets, updateOffsetsResidual, updatePanelOffset} from '../action-creators/mapActions.js';
 
-import Tour from './Tour.js';
 
 //connect later to store;
 
@@ -28,7 +27,8 @@ class FooterSlides extends Component {
 	return (
             <div className="row footer">
                 <div className="row">
-                    <Contact />
+                    {/*<Contact />*/}
+
                 </div>
             </div>
             )

@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import Contact from './Contact.js';
 import {Tooltip} from 'react-lightweight-tooltip';
 
-import mapSites from '../non-db/mapSites.js';
+//import mapSites from '../non-db/mapSites.js';
+import mapSites from '../non-db/mapSitesScreen.js';
 
 import { centerRescaled, tiling, scaleOps, sitesFiltered } from '../plug-ins/rawTiles.js';
 import {updateSite} from '../action-creators/siteActionsNDB.js';

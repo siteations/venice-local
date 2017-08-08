@@ -46,7 +46,7 @@ render(){
     let images = this.props.sites.genImages.filter(images => +images.narrativeId === +obj.id);
     let biblio = this.props.sites.genBiblio.filter(bib => +bib.narrativeId === +obj.id);
 
-    console.log(obj.type);
+    //console.log(obj.type);
 
     return (
          <div className={this.props.baseClass} ref="sizeP" id="panelWin" onAnimationEnd={e=> this.refSize(e)} style={{height:`${(this.props.sites.specLayer!=='prints')? this.props.map.windowSize[1]+6: this.props.map.windowSize[1]-40}px` }}>
