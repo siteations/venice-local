@@ -56,7 +56,7 @@ render(){
               {images.length > 0 &&
                 <Imagetrey image={images} onAnimationEnd={e=> this.refSize(e)} width={this.state.size[0]} height={(this.props.map.windowSize[1]+6)*0.65} />
               }
-
+            <p>
             {obj.text && typeof(obj.text)!=='object' && obj.type !== 'credits' && obj.type !== 'biblio' && obj.type !== 'intro' &&
               obj.text.split('/').map((item,i) =>{
                 if (i%2===0){
@@ -70,7 +70,7 @@ render(){
               obj.text.map(lines=>{
                 return <p>{lines}</p>
               })
-            }
+            }</p>
             <br/>
             <br/>
             {obj.researcherName &&

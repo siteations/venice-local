@@ -8,9 +8,9 @@ import './style/stylesheets/normalize.css';
 import './style/stylesheets/bootstrap.css';
 import './style/stylesheets/font-awesome.css';
 import './style/stylesheets/footer.css';
+//import './style/stylesheets/styleScreen.css';
 import './style/stylesheets/style.css';
-// import './style/bootstrap/jquery.min.js';
-// import './style/bootstrap/bootstrap.min.js';
+
 //--------------------AXIOS & d3 & other libraries--------------------
 
 import axios from 'axios';

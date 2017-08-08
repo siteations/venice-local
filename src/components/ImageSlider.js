@@ -74,9 +74,9 @@ render() {
                                 })
                               }<br/>
           */}
-      <p><span className="Trenda-Bold">View Online: </span>
+      <h5><span className="Trenda-Bold">View Online: </span>
                         <a href={this.props.image[this.state.active].link} target="_blank" style={{fontWeight: 'normal'}}>Newberry Catalog</a> . <a href={this.props.image[this.state.active].onlineArchive} target="_blank" style={{fontWeight: 'normal'}}>CARLI digital collections</a><br/><br/>
-                       </p>
+                       </h5>
     </div>
     );
   }

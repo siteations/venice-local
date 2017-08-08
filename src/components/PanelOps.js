@@ -45,6 +45,7 @@ class PanelB extends Component {
   render(){
                 //<MapSecondary height={1} width={1} />
                 //console.log(this.props.map.mapSite);
+                //map originally at .7 for home viewing .775 for screen
 
    return (
          <div className={`whiteBackground ${this.props.baseClass}`} id="panelWin" onAnimationEnd={e=> this.refSize(e)} style={{height:`${this.props.map.windowSize[1]+6}px`, overflow: 'hidden' }}>

@@ -377,7 +377,7 @@ class MapSVG extends Component {
         //console.log('results?', this.props.map.windowSize, currentSite, clipDetails, details);
         //console.log('results?', currentSite);
         var height=this.props.map.windowSize[1];
-        if (this.props.sites.specLayer==='maps' || this.props.sites.specLayer==='prints'){var height = height*.7};
+        if (this.props.sites.specLayer==='maps' || this.props.sites.specLayer==='prints'){var height = height*.7}; // originally .7 for screen .775
 
         return (
 
@@ -508,13 +508,13 @@ class MapSVG extends Component {
            </div>
            {this.props.sites.specLayer==='maps' &&
               <div className="">
-              <h5 className="BornholmSandvig pad10" > Cartographic Tour: <span className="Trenda-Regular">Site {this.props.map.mapSite.id} of {this.props.map.mapTourAll.length}, {this.props.map.mapSite.author}</span></h5>
+              <h5 className="BornholmSandvig pad10 tours" > Cartographic Tour: <span className="Trenda-Regular">Site {this.props.map.mapSite.id} of {this.props.map.mapTourAll.length}, {this.props.map.mapSite.author}</span></h5>
               <Tour type="maps" />
               </div>
             }
             {this.props.sites.specLayer==='prints' &&
               <div className="">
-              <h5 className="BornholmSandvig pad10" > Print Tour: </h5>
+              <h5 className="BornholmSandvig pad10 tours" > Print Tour: </h5>
               <Tour type="prints" />
               </div>
             }
