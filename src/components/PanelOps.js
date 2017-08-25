@@ -57,7 +57,7 @@ class PanelB extends Component {
               </div>
               {this.props.map.mapSite.id > 2 && this.props.sites.specLayer==='maps' &&
               <div className="whiteBackground">
-                <MapSecondary height={.775} width={1} />
+                <MapSecondary height={.7} width={1} />
               </div>
               }
               {this.props.map.mapSite.id > 2 && this.props.sites.specLayer==='maps' &&
@@ -82,7 +82,7 @@ class PanelB extends Component {
                       return (
                    <div className="row">
                     <div className="col-md-3 center-block text-center">
-                      <div className="bIcon text-center inlineBlock" ><img src={this.props.map.mapSite.src[i]} style={{borderRadius: '5px'}}/></div>
+                      <div className="bIcon bLIcon text-center inlineBlock" ><img src={this.props.map.mapSite.src[i]} style={{borderRadius: '5px'}}/></div>
                     </div>
                     <div className="col-md-9">
                       <h4 className="BornholmSandvig">{(this.props.map.mapSite.subtitles)? this.props.map.mapSite.subtitles[i] : ''}</h4>

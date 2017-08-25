@@ -31,11 +31,12 @@ class PanelMap extends Component {
   render(){
 
     let obj = this.props.map.mapSite;
-    var height = this.props.map.windowSize[1]*.14; //.14 for screen
-    if (this.props.size==='full') { height = this.props.map.windowSize[1]*.805};
+    var height = this.props.map.windowSize[1]*.22 +'px'; //.14 for screen . 21 otherwise
+    if (this.props.size==='full') { height = null};
 
     return (
-         <div className="pad10" style={{overflowY:'auto', overflowX:'hidden', height: `${height}px`}}>
+         <div className="pad10" style={{overflowY:'auto', overflowX:'hidden', height: `${height}`}}>
+
           <div className="row ">
             <div className="col-md-3">
             <h5 className="BornholmSandvig pad10">
@@ -53,7 +54,7 @@ class PanelMap extends Component {
           {obj.id>2 &&
             <div className="row">
               <div className="col-md-3 center-block text-center">
-                <div className="bIcon text-center inlineBlock" ><img src={obj.src} style={{borderRadius: '5px'}}/></div>
+                <div className="bIcon bLIcon text-center inlineBlock" ><img src={obj.src} style={{borderRadius: '5px'}}/></div>
               </div>
               <div className="col-md-9">
                 <p>{obj.narrative}</p>
@@ -66,7 +67,7 @@ class PanelMap extends Component {
                 return (
              <div className="row">
               <div className="col-md-3 center-block text-center">
-                <div className="bIcon text-center inlineBlock" ><img src={obj.src[i]} style={{borderRadius: '5px'}}/></div>
+                <div className="bIcon bLIcon text-center inlineBlock" ><img src={obj.src[i]} style={{borderRadius: '5px'}}/></div>
               </div>
               <div className="col-md-9">
                 <p>{item}</p>

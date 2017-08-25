@@ -186,7 +186,7 @@ const mapSites = [
 	{
 		id: 9,
 		x: 3619, //Giudecca / Redentore... check this
-		y: 5487,
+		y: 5887,
 		r: 0,
 		scale: 4,
 		tile:176,
@@ -312,7 +312,7 @@ const mapSites = [
 	{
 		id: 14,
 		x: 8408, //bertelli focus on lido
-		y: 4684,
+		y: 5584,
 		r: 0,
 		scale: 4, //maybe 4
 		tile:148,
@@ -333,10 +333,10 @@ const mapSites = [
 	{
 		id: 15,
 		x: 8192, //forimi general
-		y: 3596,
+		y: 4096,
 		r: 0,
 		scale: 3,
-		tile:190,
+		tile:160,
 		mapName: 'florimi',
 		name: "Florimi's Procession Scenes",
 		type: 'map',

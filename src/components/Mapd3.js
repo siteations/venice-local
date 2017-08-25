@@ -380,7 +380,7 @@ class MapSVG extends Component {
         //console.log('results?', this.props.map.windowSize, currentSite, clipDetails, details);
         //console.log('results?', currentSite);
         var height=this.props.map.windowSize[1];
-        if (this.props.sites.specLayer==='maps' || this.props.sites.specLayer==='prints'){var height = height*.775}; // originally .7 for screen .775
+        if (this.props.sites.specLayer==='maps' || this.props.sites.specLayer==='prints'){var height = height*.7}; // originally .7 for screen .775
 
         return (
 

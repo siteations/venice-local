@@ -181,7 +181,7 @@ a:hover {
     width: 100%;
     height: 100vh;
     padding: 10px 20px 3px 20px;
-    overflow-y: auto;
+    overflow-y: hidden;
 		overflow-x: hidden;
     background-color: #f4f2ec;
 }
@@ -234,6 +234,7 @@ a:hover {
 	border:double 3px #ffffff;
 	background-color: #d8d0ba;
 	padding-bottom: 10px;
+	padding-top:10px;
 	box-shadow: 0 0 3px #808080;
 	margin-top: 38px;
 	margin-bottom: 0px !important;
@@ -258,7 +259,7 @@ a:hover {
 
 @media (max-width: 1440px) {
 	.mainMaps {
-		height: 710px;
+		height: 850px;
 		/*681*/
 	}
 }
@@ -373,7 +374,7 @@ a:hover {
 	background-color: #ffffff;
 	margin-top: 10px;
 	width: 65%;
-	min-height: 710px;
+	min-height: 850px;
 	box-shadow: 0 0 3px #808080;
 	overflow: hidden;
 	animation-name: closingM;
@@ -386,7 +387,7 @@ a:hover {
 	background-color: #ffffff;
 	margin-top: 10px;
 	width: 65%;
-	min-height: 710px;
+	min-height: 850px;
 	box-shadow: 0 0 3px #808080;
 	overflow: hidden;
 	animation-name: openingM;
@@ -399,7 +400,7 @@ a:hover {
 	background-color: #ffffff;
 	margin-top: 10px;
 	width: 65%;
-	min-height: 710px;
+	min-height: 850px;
 	box-shadow: 0 0 3px #808080;
 	overflow: hidden;
 	animation-name: openingMQ;
@@ -413,7 +414,7 @@ a:hover {
 	background-color: #f4f2ec;
 	/*background-color: #ffffff;*/
 	margin-top: 10px;
-	min-height: 710px;
+	min-height: 850px;
 	width: 0%;
 	visibility: hidden;
 }
@@ -424,7 +425,7 @@ a:hover {
 	background-color: #f4f2ec;
 	/*background-color: #ffffff;*/
 	margin-top: 10px;
-	min-height: 710px;
+	min-height: 850px;
 	width: 0%;
 overflow-y: auto;
 	overflow-x: hidden;
@@ -440,7 +441,7 @@ overflow-y: auto;
 	background-color: #f4f2ec;
 	/*background-color: #ffffff;*/
 	margin-top: 10px;
-	min-height: 710px;
+	min-height: 850px;
 	overflow-x: hidden;
 	width: 60%;
 overflow-y: auto;
@@ -459,7 +460,7 @@ overflow-y: auto;
 	width: 65%;
 overflow-y: auto;
 	overflow-x: hidden;
-	min-height: 710px;
+	min-height: 850px;
 	box-shadow: 0 0 3px #808080;
 	animation-name: openingPL;
     animation-duration: .25s;
@@ -479,7 +480,7 @@ overflow-y: auto;
 	width: 65%;
 overflow-y: auto;
 	overflow-x: hidden;
-	min-height: 710px;
+	min-height: 850px;
 	box-shadow: 0 0 3px #808080;
 	animation-name: openingPLPart;
     animation-duration: .25s;
@@ -494,7 +495,7 @@ overflow-y: auto;
 	width: 30%;
 	overflow: hidden;
 	visibility: visible;
-	min-height: 710px;
+	min-height: 850px;
 	box-shadow: 0 0 3px #808080;
 	animation-name: closingP;
     animation-duration: .25s;
@@ -504,7 +505,7 @@ overflow-y: auto;
 .mtypeFull {
 	border:double 3px #ffffff;
 	padding:5px;
-	min-height: 710px;
+	min-height: 850px;
 	background-color: #e6e1d3;
 	margin-top: 10px;
 	width: 4.5%;
@@ -613,11 +614,36 @@ overflow-y: auto;
 	box-shadow: 0 0 3px #808080;
 }
 
+.bLIcon {
+	background-color: #f4f2ec;
+	width: 60px;
+	height: 60px;
+	margin:10px 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 1px #808080;
+}
+
+.bLIconSelected {
+	background-color: #ffffff;
+	width: 60px;
+	height: 60px;
+	margin:10px 10px;
+	border-radius: 5px;
+	border: solid 2px #352c1a;
+	box-shadow: 0 0 3px #808080;
+}
+
 .inlineBlock {
 	display: inline-block;
 }
 
 .bIcon:active {
+	background-color: #ffffff;
+	border: solid 2px #352c1a;
+	box-shadow: 0 0 3px #808080;
+}
+
+.bLIcon:active {
 	background-color: #ffffff;
 	border: solid 2px #352c1a;
 	box-shadow: 0 0 3px #808080;
@@ -784,7 +810,7 @@ li{
 }
 
 .tours {
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 }
 
 p {
