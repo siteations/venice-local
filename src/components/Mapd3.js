@@ -55,6 +55,7 @@ class MapSVG extends Component {
         this.refSize();
         this.props.getLayers(this.props.sites.currLayers);
         this.props.getAllDetailsNarratives();
+
     }
 
     refSize(){
@@ -194,7 +195,7 @@ class MapSVG extends Component {
 
     }
 
-    zoomDC(e, type){
+    zoomdC(e, type){
         e.preventDefault();
         let multiplier;
         if (type==='in'){
@@ -256,7 +257,7 @@ class MapSVG extends Component {
         this.props.setCurrTilesize(128);
 
         } else {
-            this.zoomDC(e, 'in');
+            this.zoomdC(e, 'in');
             //let siteCent = [0, 0]; //rework this to accept current center
         }
     }
@@ -324,12 +325,9 @@ class MapSVG extends Component {
 
         this.zoomTo(e, id);
 
-        if (id !== 'none'){
-
         this.showLabel(e)
         this.props.overlayDetails(true);
         this.loadPanel(e,'core');
-        }
 
         //more mouse elements here...
 
@@ -380,7 +378,7 @@ class MapSVG extends Component {
         //console.log('results?', this.props.map.windowSize, currentSite, clipDetails, details);
         //console.log('results?', currentSite);
         var height=this.props.map.windowSize[1];
-        if (this.props.sites.specLayer==='maps' || this.props.sites.specLayer==='prints'){var height = height*.7}; // originally .7 for screen .775
+        if (this.props.sites.specLayer==='maps' || this.props.sites.specLayer==='prints'){var height = height*.7};
 
         return (
 
@@ -473,7 +471,7 @@ class MapSVG extends Component {
                                     //onMouseOver = {e=>this.showLabel(e)}
                                     //onMouseOut={''/*e=>this.hideLabel(e)*/}
                                     onTouchTap={ e=>this.setLabel(e)}
-                                    //onClick={ e=>this.setLabel(e)}
+                                    onClick={ e=>this.setLabel(e)}
                                     onDoubleClick={(e)=>this.selectShowPanel(e, +d.id)}
                                     />
 
@@ -511,13 +509,13 @@ class MapSVG extends Component {
            </div>
            {this.props.sites.specLayer==='maps' &&
               <div className="">
-              <h5 className="BornholmSandvig pad10 tours" > Cartographic Tour: <span className="Trenda-Regular">Site {this.props.map.mapSite.id} of {this.props.map.mapTourAll.length}, {this.props.map.mapSite.author}</span></h5>
+              <h5 className="BornholmSandvig pad10" > Cartographic Tour: <span className="Trenda-Regular">Site {this.props.map.mapSite.id} of {this.props.map.mapTourAll.length}, {this.props.map.mapSite.author}</span></h5>
               <Tour type="maps" />
               </div>
             }
             {this.props.sites.specLayer==='prints' &&
               <div className="">
-              <h5 className="BornholmSandvig pad10 tours" > Print Tour: </h5>
+              <h5 className="BornholmSandvig pad10" > Print Tour: </h5>
               <Tour type="prints" />
               </div>
             }

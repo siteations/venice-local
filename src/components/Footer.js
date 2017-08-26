@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux';
-//import Contact from './Contact.js';
+import Contact from './Contact.js';
 
 import { centerRescaled, tiling, scaleOps, sitesFiltered } from '../plug-ins/rawTiles.js';
 import {updateSite} from '../action-creators/siteActionsNDB.js';
@@ -27,7 +27,7 @@ class FooterSlides extends Component {
 	return (
             <div className="row footer">
                 <div className="row">
-                    {/*<Contact />*/}
+                    <Contact />
 
                 </div>
             </div>

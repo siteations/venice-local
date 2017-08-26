@@ -11,7 +11,7 @@ import { Intro, Credits, Biblio, About } from './Intro.js';
 
 
 class PanelBase extends Component {
-	constructor(props) {
+  constructor(props) {
         super(props);
         this.state = {
           site: this.props.sites.currSite,
@@ -25,19 +25,19 @@ class PanelBase extends Component {
   }
 
   refSize(e){
-  	if (e){e.preventDefault();};
-  	let sele = window.document.getElementById("panelWin").attributes[0].ownerElement;
-  	let width = sele.clientWidth;
-  	let height = sele.clientHeight;
-  	this.props.updatePanelSize([width, height], width/height);
+    if (e){e.preventDefault();};
+    let sele = window.document.getElementById("panelWin").attributes[0].ownerElement;
+    let width = sele.clientWidth;
+    let height = sele.clientHeight;
+    this.props.updatePanelSize([width, height], width/height);
     this.setState({size:[width, height]});
   }
 
   refImages(img){
-  	let count = img.split(', ');
+    let count = img.split(', ');
   }
 
-render(){
+  render(){
     var obj, image;
     var other = true;
     if (this.props.sites.currSite === '0'){other=false};
@@ -46,7 +46,7 @@ render(){
     let images = this.props.sites.genImages.filter(images => +images.narrativeId === +obj.id);
     let biblio = this.props.sites.genBiblio.filter(bib => +bib.narrativeId === +obj.id);
 
-    //console.log(obj.type);
+    console.log(obj.type);
 
     return (
          <div className={this.props.baseClass} ref="sizeP" id="panelWin" onAnimationEnd={e=> this.refSize(e)} style={{height:`${(this.props.sites.specLayer!=='prints')? this.props.map.windowSize[1]+6: this.props.map.windowSize[1]-40}px` }}>
@@ -56,7 +56,7 @@ render(){
               {images.length > 0 &&
                 <Imagetrey image={images} onAnimationEnd={e=> this.refSize(e)} width={this.state.size[0]} height={(this.props.map.windowSize[1]+6)*0.65} />
               }
-            <p>
+              <p>
             {obj.text && typeof(obj.text)!=='object' && obj.type !== 'credits' && obj.type !== 'biblio' && obj.type !== 'intro' &&
               obj.text.split('/').map((item,i) =>{
                 if (i%2===0){
@@ -74,7 +74,7 @@ render(){
             <br/>
             <br/>
             {obj.researcherName &&
-              <p><span className="Trenda-Bold">Narrative Credits: </span> {obj.researcherName}, {obj.researcherAffiliation}.</p>
+              <p><span className="Trenda-Bold"></span> {obj.researcherName}, {obj.researcherAffiliation}.</p>
             }
             {obj.type === 'intro' &&
               <Intro obj={obj} />
@@ -85,7 +85,6 @@ render(){
             {obj.type === 'credits' &&
               <div>
                 <Credits obj={obj} />
-                <About />
               </div>
             }
         </div>

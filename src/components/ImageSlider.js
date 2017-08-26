@@ -3,42 +3,42 @@ import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
 class Image extends Component {
-	constructor(props) {
+  constructor(props) {
         super(props);
         this.state = {
-        	active : 0,
-        	widthOriginal: props.panel.imageWidth,
-        	widthImg: props.width,
-        	heightImg: props.height,
+          active : 0,
+          widthOriginal: props.panel.imageWidth,
+          widthImg: props.width,
+          heightImg: props.height,
         }
   }
 
   getSize(e){
-  	e.preventDefault();
-  	var relH = e.target.attributes.src.ownerElement.clientHeight;
-  	var relW = e.target.attributes.src.ownerElement.clientWidth;
-  	var heightImg = this.props.panel.panelSize[1]*.75;
-  	var widthImg = this.props.panel.panelSize[0]*.9;
-  	this.setState({widthImg: widthImg});
-  	var newH = widthImg/relW*relH;
+    e.preventDefault();
+    var relH = e.target.attributes.src.ownerElement.clientHeight;
+    var relW = e.target.attributes.src.ownerElement.clientWidth;
+    var heightImg = this.props.panel.panelSize[1]*.75;
+    var widthImg = this.props.panel.panelSize[0]*.9;
+    this.setState({widthImg: widthImg});
+    var newH = widthImg/relW*relH;
 
-  	if (newH>heightImg) { //in case too tall
-  		var ratioDiff = heightImg/newH;
-  		var newWidth = ratioDiff*widthImg;
-  		this.setState({widthImg: newWidth});
-  	}
+    if (newH>heightImg) { //in case too tall
+      var ratioDiff = heightImg/newH;
+      var newWidth = ratioDiff*widthImg;
+      this.setState({widthImg: newWidth});
+    }
 
   }
 
   switchImg(e){
     e.preventDefault();
-  	let ind = +this.state.active;
-  	let index = +e.target.id.split(' ')[1];
+    let ind = +this.state.active;
+    let index = +e.target.id.split(' ')[1];
 
-  		this.setState({active: index});
+      this.setState({active: index});
   }
 
-render() {
+  render() {
 
     var img = this.props.image[this.state.active];
     var imgId = (img!==undefined)? img.id : this.props.image[0].id;
@@ -63,20 +63,21 @@ render() {
           }
         </div>
       </div>
-      <h5><span className="Trenda-Bold">Image: </span>{this.props.image[this.state.active].caption}</h5>
-          {/* this.props.image[this.state.active].bibliography &&
-            this.props.image[this.state.active]bibliography.split('/').map((text,i) =>{
+      <h5><span className="Trenda-Bold">Image: </span>
+          { this.props.image[this.state.active].bibliography &&
+            this.props.image[this.state.active].bibliography.split('/').map((text,i) =>{
                                   if (i%2===0){
                                     return <span>{text}</span>
                                   } else {
                                     return <span><em>{text}</em></span>
                                   }
                                 })
-                              }<br/>
-          */}
-      <h5 className="hLinks"><span className="Trenda-Bold">View Online: </span>
-                        <a href={this.props.image[this.state.active].link} className="bNav" target="_blank" style={{fontWeight: 'normal'}}>Newberry Catalog</a> . <a href={this.props.image[this.state.active].onlineArchive} className="bNav" target="_blank" style={{fontWeight: 'normal'}}>CARLI digital collections</a>
-                       </h5><br/><br/>
+
+          }
+      </h5>
+      <h5><span className="Trenda-Bold">Resource location: </span>
+                        <a href={this.props.image[this.state.active].link} className="bNav"  target="_blank" style={{fontWeight: 'normal'}}>Newberry Catalog</a><br/><br/>
+                       </h5>
     </div>
     );
   }

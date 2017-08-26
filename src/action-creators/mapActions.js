@@ -1,4 +1,4 @@
-import mapSites from '../non-db/mapSitesScreen.js';
+import mapSites from '../non-db/mapSites.js';
 import printSites from '../non-db/printSites.js';
 
 //DATABASE AND NON-DATABASE VERSION ARE THE SAME
@@ -120,8 +120,8 @@ const initMap = {
 	windowOffsets: [0,0], //x, y
 	panelOffset:0,
 
-	currZoom: 3, //map zoom value
-	tileSize: 128, //px size
+	currZoom: 2, //map zoom value
+	tileSize: 194, //px size
 	xyOffsets: [0,0], //x, y
 	xyOffsetsR: [0,0], //x, y
 	xyCenter: [0,0], //x, y

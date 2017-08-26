@@ -118,6 +118,20 @@ class FooterSlides extends Component {
         // if (this.props.type === "maps") {
         // this.resetStart();
         // }
+
+        if (this.props.type === "maps") {
+            var site=this.props.map.mapTourAll[0];
+            var siteCent = [site.x, site.y];
+            var siteZoom = site.scale;
+            var siteTile = site.tile;
+
+            this.props.setMapSite(site);
+            this.flyToSingle(siteZoom, siteCent, siteTile);
+
+            //console.log('in mount', site);
+
+        }
+
     }
 
     // anim(){
@@ -125,7 +139,7 @@ class FooterSlides extends Component {
     // }
 
     resetStart(){
-        console.log('got here on load');
+        //console.log('got here on load');
         if (this.props.type === "maps" || this.props.type === "prints") {
             var site=this.props.map.mapTourAll[0];
             var siteCent = [site.x, site.y];
@@ -316,7 +330,7 @@ class FooterSlides extends Component {
 
     }
 
-    flyToSingle(zoom, newCenter, tile = 128){
+    flyToSingle(zoom, newCenter, tile = 128, start){
         var win = this.props.map.windowSize;
         let panel = this.props.panel.panelSize;
         // if (!this.props.options.panelNone){
@@ -324,7 +338,11 @@ class FooterSlides extends Component {
         //     //var win = wind;
         // };
 
-        let offset = centerRescaled(zoom, newCenter, win, tile);
+        //if (start){
+        var offset = centerRescaled(zoom, newCenter, win, tile);
+        // } else {
+
+        // }
         //console.log('zooms: ', this.props.map.currZoom, zoom, 'pixels: ', this.props.map.tileSize, 128, 'offsets: ', this.props.map.xyOffsets, offset);
         if (this.props.type !== 'maps'){
         var sele = window.document.getElementById("mapWin").attributes[0].ownerElement.childNodes[0].clientHeight;
@@ -333,8 +351,17 @@ class FooterSlides extends Component {
         }
         var number=sele*.2;
 
+        console.log('what', offset, start);
+
+        var xOff=offset.x;
+        if (!start){
         this.props.setOffsetsR([offset.x, offset.y+number]);
         this.props.setCurrOffsets([offset.x, offset.y+number]);
+        } else {
+        this.props.setOffsetsR([30, offset.y+number]);
+        this.props.setCurrOffsets([30, offset.y+number]);
+        console.log('got here offset 30');
+        }
         this.props.setCurrZoom(+zoom);
         this.props.setCurrTilesize(tile);
         //current zoom and tile size... allows for conversion
@@ -446,7 +473,7 @@ class FooterSlides extends Component {
     return (
                   <div className="flex center" >
 
-                       <div className="nIcon flex center middle" >
+                       <div className="nIcon flex center middle" style={{marginRight:'10px', marginLeft: '10px'}}>
                         <Tooltip content='return to start' styles={toolstyles}>
                         <span value="reset" className="glyphicon glyphicon glyphicon-step-backward" onTouchTap={(e)=>this.resetStart(e)} ></span>
                         </Tooltip>
@@ -455,21 +482,21 @@ class FooterSlides extends Component {
 
                         <div className="nIcon flex center middle" >
                         <Tooltip content='load last series' styles={toolstyles}>
-                        <span value="back" className="glyphicon glyphicon glyphicon-chevron-left" style={{opacity:(this.state.tourSeries===1)? '.25' : '1'}} onTouchTap={(e)=>this.setPrior(e)} ></span>
+                        <span value="back" className="glyphicon glyphicon glyphicon-chevron-left" style={{opacity:(this.state.tourSeries===1)? '.25' : '1'}} onTouchTap={(this.state.tourSeries===1)? (e)=> e.preventDefault():(e)=>this.setPrior(e)} ></span>
                         </Tooltip>
                         </div>
 
                         {tour &&
                             tour.map(site=>{
 
-                            return <div className={(site.siteId===this.props.sites.currSite)? 'bIconSelected bLIconSelected text-center' : 'bIcon bLIcon  text-center'}
+                            return <div className='bIcon text-center'
                                 value={(this.props.type === 'maps' || site.id<3 )? site.id : site.core}
                                 data={site.minor}
                                 key = {site.id}
                                 onTouchTap={e=>this.setSite(e)} >
                                  <Tooltip content={`click for: ${site.name}`} styles={toolstyles2}>
                                 <img src={(typeof(site.src)==='string')? site.src : site.src[+site.id-1]}
-                                style={{borderRadius: '5px'}}
+                                style={{borderRadius: '5px', width: '100%'}}
                                 value={(this.props.type === 'maps')? site.id : site.core}
                                 data={site.minor} />
                                 </Tooltip>
@@ -477,7 +504,7 @@ class FooterSlides extends Component {
                         })}
                         <div className="nIcon flex center middle" >
                         <Tooltip content='load more sites' styles={(this.props.type === "maps")? toolstyles : toolstyles4 }>
-                        <span value="forward" className="glyphicon glyphicon-chevron-right" style={{opacity:(this.state.tourSeries===3)? '.25' : '1'}} onTouchTap={(e)=>this.setNext(e)} ></span>
+                        <span value="forward" className="glyphicon glyphicon-chevron-right" style={{opacity:((this.state.tourSeries===3 && this.props.type !== "maps") || (this.state.tourSeries===2 && this.props.type === "maps"))? '.25' : '1'}} onTouchTap={((this.state.tourSeries===3 && this.props.type !== "maps") || (this.state.tourSeries===2 && this.props.type === "maps"))? (e)=>e.preventDefault(): (e)=>this.setNext(e)} ></span>
                         </Tooltip>
                         </div>
                         {/*this.props.type === "bottom" &&
