@@ -1,16 +1,5 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React from 'react';
 import { connect } from 'react-redux';
-
-//---------------------------PRE-DB / PRE-REDUX PLACEHOLDERS---------------------------
-import { cirMain, cirMinor, clusterTest, narrativeTest } from '../non-db/cirTest.js';
-
-//--------------------------ANNO FRAMEWORK GEOMETRY------------------------------------
-
-import { spacingFrame } from '../plug-ins/rawDetails.js';
-
-import { getDetailsNarratives } from '../action-creators/siteActionsNDB.js';
-
 
 //-----------------------------------component---------------------------------
 

@@ -11,17 +11,13 @@ import './style/stylesheets/footer.css';
 //import './style/stylesheets/styleScreen.css';
 import './style/stylesheets/style.css';
 
-//--------------------AXIOS & d3 & other libraries--------------------
-
-import axios from 'axios';
-
 
 //----------------components to come---------------
 
 import App from './components/App';
 import Alternate from './components/Alternate';
 
-console.log(window, window.outerWidth);
+//console.log(window, window.innerWidth);
 
 
 render(

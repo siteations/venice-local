@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-import IconButton from 'material-ui/IconButton';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import Chip from 'material-ui/Chip';
 import LayersList from './LayersList.js';
 
 import {panelsOther} from '../non-db/panelsOther.js';
@@ -20,14 +14,6 @@ import {updateOffsets, updateOffsetsResidual } from '../action-creators/mapActio
 
 import {setNarr, setTitlesCore} from '../action-creators/panelActions.js';
 
-
-const styles = {
-  chip: {
-    margin: 2,
-
-  },
-};
-//connect later?
 
 class Header2 extends Component {
     constructor(props){

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
 //---------------------------MAP OPTIONS & COMPONENTS---------------------------
@@ -7,22 +6,16 @@ import { tiling, scaleOps, sitesFiltered, centerRescaled, reverseCenter } from '
 import { spacingFrame } from '../plug-ins/rawDetails.js';
 import { ClipTiles, BackgroundTiles, BackgroundMask, Underlay } from './TileVariants.js';
 import DetailOver from './AnnoVariants.js';
-import MapOptions from './MapOptions.js';
 import Tour from './Tour.js';
-
-
-//---------------------------PRE-DB / PRE-REDUX PLACEHOLDERS---------------------------
-import {cirMain} from '../non-db/cirTest.js';
-
 
 //---------------------------ACTION for DISPATCH---------------------------
 import {updateZoom, updateTile, updateOffsets, updateCenter, updateCenterScreen, updateWindow, updateWindowOffsets, updateOffsetsResidual, updatePanelOffset} from '../action-creators/mapActions.js';
 
-import {updateColor, updateAnno, updateDetail, updatePanelSmall, updatePanelLarge} from '../action-creators/optionActionsNDB.js';
+import {updatePanelSmall, updatePanelLarge} from '../action-creators/optionActionsNDB.js';
 
-import {loadLayers, updateSite, overlayDetails, loadSites, addAllLayers, loadFiltered, getDetailsNarratives, setDetailId, addNewSiteCenter, addNewSiteRadius } from '../action-creators/siteActionsNDB.js';
+import {loadLayers, updateSite, overlayDetails, loadSites, loadFiltered, getDetailsNarratives, setDetailId, addNewSiteCenter, addNewSiteRadius } from '../action-creators/siteActionsNDB.js';
 
-import { setTitlesCore, setTitle, setNarr } from '../action-creators/panelActions.js';
+import { setTitlesCore, setNarr } from '../action-creators/panelActions.js';
 
 class MapSVG extends Component {
     constructor(props) {
@@ -145,12 +138,12 @@ class MapSVG extends Component {
         let curr = this.props.map.currZoom, pix = this.props.map.tileSize, oX =this.props.map.xyOffsets[0], oY=this.props.map.xyOffsets[1];
 
         if (e.deltaY>1) { //zoom in
-            pix += 2, oX += 2*resX, oY += 2*resY;
+            pix += 2; oX += 2*resX; oY += 2*resY;
         if (pix>=256){ curr++; pix=128 }
         if (curr>6){ curr=6; pix=256; oX = this.props.map.xyOffsets[0]; oY = this.props.map.xyOffsets[1] };
 
         } else if (e.deltaY<1) { //zoom out
-            pix -= 2, oX -= 2*resX, oY -= 2*resY;
+            pix -= 2; oX -= 2*resX; oY -= 2*resY;
         if (pix<=128){ curr--; pix=256 }
         if (curr<2){ curr=2; pix=128; oX = this.props.map.xyOffsets[0]; oY = this.props.map.xyOffsets[1] };
         } else {
@@ -183,9 +176,9 @@ class MapSVG extends Component {
         let curr = this.props.map.currZoom, pix = this.props.map.tileSize, oX =this.props.map.xyOffsets[0], oY=this.props.map.xyOffsets[1];
 
         if (curr<6 && type==='in') { //zoom in
-            curr++, oX = newOx, oY = newOy;
+            curr++; oX = newOx; oY = newOy;
         } else if (curr>2 && type==='out'){
-            curr--, oX = newOx, oY = newOy;
+            curr--; oX = newOx; oY = newOy;
         }
 
         this.props.setOffsetsR([oX, oY]);
@@ -215,9 +208,9 @@ class MapSVG extends Component {
         let curr = this.props.map.currZoom, pix = this.props.map.tileSize, oX =this.props.map.xyOffsets[0], oY=this.props.map.xyOffsets[1];
 
         if (curr<6 && type==='in') { //zoom in
-            curr++, oX = newOx, oY = newOy;
+            curr++; oX = newOx; oY = newOy;
         } else if (curr>2 && type==='out'){
-            curr--, oX = newOx, oY = newOy;
+            curr--; oX = newOx; oY = newOy;
         }
 
         this.props.setOffsetsR([oX, oY]);

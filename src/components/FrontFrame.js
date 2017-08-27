@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
-import Header from './Header.js';
 import Footer from './Footer.js';
 import MapBar from './MapBar.js';
 import MapSVG from './Mapd3.js';
@@ -12,17 +10,10 @@ import MapOptions from './MapOptions.js';
 import Nav from './Nav.js';
 import Header2 from './Header2.js';
 
-import {Preload} from 'react-preload';
-//import {tilepreload} from '../plug-ins/rawTiles.js';
 
-import {loadLayers, loadSites, addAllLayers, loadFiltered } from '../action-creators/siteActionsNDB.js';
+import {loadLayers, loadSites, addAllLayers} from '../action-creators/siteActionsNDB.js';
 import {getAllToursThemes} from '../action-creators/optionActionsNDB.js';
 
-
-//var images = tilepreload();
-//console.log(images);
-
-var loadingIndicator = (<div>Loading...</div>);
 
 class Frame extends Component {
 	constructor(props){

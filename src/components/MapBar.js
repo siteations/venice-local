@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import {Tooltip} from 'react-lightweight-tooltip';
-import IconButton from 'material-ui/IconButton';
 
 import {updatePanelNone, updatePanelSmall, updatePanelLarge, updatePanelStart, updatePanelMid} from '../action-creators/optionActionsNDB.js';
 import {updateColor, updateAnno, updateDetail} from '../action-creators/optionActionsNDB.js';
@@ -243,7 +241,7 @@ class MapBar extends Component{
 										<div className={each.cn} key={i+'navbutton'} value={each.v} onMouseOver="" onMouseOut="" onTouchTap={(disabled)? null :this.layerPanel}>
 											<Tooltip content={(disabled)? each.v+' disabled': 'toggle '+ each.v} styles={toolstyles}>
 											{each.src !== ' ' &&
-												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} />
+												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} alt={each.v} />
 											}
 											</Tooltip>
 										</div>
@@ -269,7 +267,7 @@ class MapBar extends Component{
 										<div className={each.cn} key={i+'navbutton'} value={each.v} onMouseOver="" onMouseOut="" onTouchTap={(disabled)? null :this.layerPanel} >
 											<Tooltip content={(disabled)? each.v+' disabled': 'toggle '+ each.v} styles={toolstyles}>
 											{each.src !== ' ' &&
-												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} />
+												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} alt={each.v} />
 											}
 											</Tooltip>
 										</div>
@@ -295,7 +293,7 @@ class MapBar extends Component{
 										<div className={each.cn} key={i+'navbutton'} value={each.v} onMouseOver="" onMouseOut="" onTouchTap={(disabled)? null :this.layerPanel} >
 											<Tooltip content={(disabled)? each.v+' disabled': 'toggle '+ each.v} styles={toolstyles}>
 											{each.src !== ' ' &&
-												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} />
+												<img src={each.src} className={`bImg ${imgClass}`} value={each.v} alt={each.v} />
 											}
 											</Tooltip>
 										</div>

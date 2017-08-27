@@ -23,21 +23,21 @@ export const spacingFrame = (windowSize, dataCircle, allDetails) => {
 
 	var offset;  // this will need adjustment
 	(dataCircle.r/2>20)? offset=20 : offset =  dataCircle.r/2;
-	let size = (height-((3)*offset))/3; //to width, height, radius... constant here: (details.length-1)*offset)/details.length
-	let x= dataCircle.cx-dataCircle.r-offset-size;
-	let cx = dataCircle.cx-dataCircle.r-offset-size/2;
-	let xText = dataCircle.cx-dataCircle.r-offset-size-5;
+	var size = (height-((3)*offset))/3; //to width, height, radius... constant here: (details.length-1)*offset)/details.length
+	var x= dataCircle.cx-dataCircle.r-offset-size;
+	var cx = dataCircle.cx-dataCircle.r-offset-size/2;
+	var xText = dataCircle.cx-dataCircle.r-offset-size-5;
 
 	let top = dataCircle.cy-(size*details.length)/2;
 
 	details.forEach((detail,i) =>{
 		let clip={};
 
-		detail.x=x, clip.x=x;
-		detail.height=size, clip.height=size;
-		detail.width=size, clip.width=size;
+		detail.x=x; clip.x=x;
+		detail.height=size; clip.height=size;
+		detail.width=size; clip.width=size;
 		detail.textX=xText;
-		detail.y=top+i*(size+offset), clip.y=top+i*(size+offset);
+		detail.y=top+i*(size+offset); clip.y=top+i*(size+offset);
 		detail.clip=`url(#detail${detail.id})`;
 
 		clip.cx=cx;
@@ -45,7 +45,7 @@ export const spacingFrame = (windowSize, dataCircle, allDetails) => {
 		clip.cy=top+size/2+i*(size+offset);
 		clip.id='detail'+detail.id;
 
-		clip.rx = size/4, clip.ry =size/4;
+		clip.rx = size/4; clip.ry =size/4;
 
 		clipDetails.push(clip);
 

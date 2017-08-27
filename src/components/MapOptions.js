@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import {Tooltip} from 'react-lightweight-tooltip';
 
 import {updateColor, updateAnno, updateDetail, setCurrTour} from '../action-creators/optionActionsNDB.js';
-import { tiling, scaleOps, sitesFiltered, centerRescaled, reverseCenter } from '../plug-ins/rawTiles.js';
+import { scaleOps } from '../plug-ins/rawTiles.js';
 
-import {updateZoom, updateTile, updateOffsets, updateCenter, updateCenterScreen, updateWindow, updateWindowOffsets, updateOffsetsResidual, updatePanelOffset} from '../action-creators/mapActions.js';
+import {updateZoom, updateTile, updateOffsets, updateCenterScreen, updateOffsetsResidual} from '../action-creators/mapActions.js';
 
-//import { tiling, scaleOps, sitesFiltered, centerRescaled, reverseCenter } from '../plug-ins/rawTiles.js';
-
-//---------------------------MATERIAL UI---------------------------
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import { Toggle, Slider, Chip } from 'material-ui';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
+import { Toggle } from 'material-ui';
 
 const styles = {
   root: {
@@ -96,9 +88,9 @@ class MapOps extends Component {
         let curr = this.props.map.currZoom, pix = this.props.map.tileSize, oX =this.props.map.xyOffsets[0], oY=this.props.map.xyOffsets[1];
 
         if (curr<6 && type==='in') { //zoom in
-            curr++, oX = newOx, oY = newOy;
+            curr++; oX = newOx; oY = newOy;
         } else if (curr>2 && type==='out'){
-            curr--, oX = newOx, oY = newOy;
+            curr--; oX = newOx; oY = newOy;
         }
 
         this.props.setOffsetsR([oX, oY]);
@@ -112,13 +104,13 @@ class MapOps extends Component {
 
         let sele = window.document.getElementById("mapWin").attributes[0].ownerElement;
         let width = sele.clientWidth;
-        let panelW = (this.props.map.windowSize[0]-width)/2;
+        //let panelW = (this.props.map.windowSize[0]-width)/2;
         let height = sele.clientHeight;
-        let [xOff, yOff] = [0,0];
-        let [xOffR, yOffR] = [0,0];
+        //let [xOff, yOff] = [0,0];
+        //let [xOffR, yOffR] = [0,0];
 
         var type = this.props.sites.specLayer;
-        if (type != "maps" || type != "prints"){
+        if (type !== "maps" || type !== "prints"){
             var w=128*(scaleOps[3][0]+1), h=128*(scaleOps[3][1]+1);
             this.props.setCurrZoom(3);
             this.props.setCurrTilesize(128);

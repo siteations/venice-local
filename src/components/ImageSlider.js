@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
 class Image extends Component {
@@ -32,7 +31,7 @@ class Image extends Component {
 
   switchImg(e){
     e.preventDefault();
-    let ind = +this.state.active;
+    //let ind = +this.state.active;
     let index = +e.target.id.split(' ')[1];
 
       this.setState({active: index});
@@ -41,14 +40,14 @@ class Image extends Component {
   render() {
 
     var img = this.props.image[this.state.active];
-    var imgId = (img!==undefined)? img.id : this.props.image[0].id;
+    //var imgId = (img!==undefined)? img.id : this.props.image[0].id;
     if (img===undefined){this.setState({active: 0});};
-    let biblio = this.props.sites.genBiblio.filter(bib => +bib.imageId === +imgId);
+    //let biblio = this.props.sites.genBiblio.filter(bib => +bib.imageId === +imgId);
 
   return (
     <div>
       <div className="text-center">
-        <img src={this.props.image[this.state.active].src} style={{width:`${this.state.widthImg}px`}} onLoad={e=>this.getSize(e)} onChange={e=>this.getSize(e)}/>
+        <img src={this.props.image[this.state.active].src} alt="" style={{width:`${this.state.widthImg}px`}} onLoad={e=>this.getSize(e)} onChange={e=>this.getSize(e)}/>
       </div>
       <div className="row m10">
         <div className="col-xs-8 col-xs-offset-2 text-center">

@@ -1,18 +1,11 @@
-// import axios from 'axios';
-// import Promise from 'bluebird';
+
 //---------------------------PRE-DB / PRE-REDUX PLACEHOLDERS---------------------------
 
-import * as tourArray from '../non-db/tours.json';
 import * as sites from '../non-db/sites.json';
 import * as details from '../non-db/details.json';
 import * as images from '../non-db/images.json';
 import * as narratives from '../non-db/narratives.json';
 import * as biblio from '../non-db/biblio.json';
-
-// //var cirMain = siteSeed;
-// var cirMinor = detailSeed;
-// var narrativeTest = narrativeSeed;
-// var imageTest = imageSeed;
 
 //-------------------CONSTANTS
 

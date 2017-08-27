@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-
+import React from 'react';
 
 
 export const Intro = (props)=>{
@@ -55,7 +53,7 @@ export const Biblio = (props)=>{
                           })
                         }
                         {item.link &&
-                          <a href={item.link} target="_blank" style={{fontWeight: 'normal'}}> {item.link}</a>
+                          <a href={item.link} target="_blank" style={{fontWeight: 'normal'}} rel="noopener noreferrer" > {item.link}</a>
                         }<br/><br/>
                        </li>
                        )
@@ -80,8 +78,8 @@ export const Biblio = (props)=>{
                             }
                           })
                         }<br/>
-                        <a href={item.link} target="_blank" style={{fontWeight: 'normal'}}>Newberry Catalog</a> .
-                        <a href={item.onlineArchive} target="_blank" style={{fontWeight: 'normal'}}> CARLI digital collections</a><br/><br/>
+                        <a href={item.link} target="_blank" style={{fontWeight: 'normal'}} rel="noopener noreferrer" >Newberry Catalog</a> .
+                        <a href={item.onlineArchive} target="_blank" style={{fontWeight: 'normal'}} rel="noopener noreferrer" > CARLI digital collections</a><br/><br/>
                        </li>
                        )
                 })
@@ -129,7 +127,7 @@ export const Credits = (props)=>{
 
             <h4 className="BornholmSandvig">{obj.subtitles[2]}</h4>
             <ul>
-            <li><span className="BornholmSandvig">{obj.web.split(',')[0]}</span>, <a href="https://www.siteations.com" target="_blank" style={{fontWeight: 'normal'}}>{obj.web.split(',')[1]}</a><br/><br/></li>
+            <li><span className="BornholmSandvig">{obj.web.split(',')[0]}</span>, <a href="https://www.siteations.com" rel="noopener noreferrer" target="_blank" style={{fontWeight: 'normal'}}>{obj.web.split(',')[1]}</a><br/><br/></li>
             </ul>
 
 
@@ -144,7 +142,7 @@ export const About = (props)=>{
           <div>
           <h4 className="BornholmSandvig">About This Site</h4>
             <p>This map was created to complement the display of Merlo’s map in the exhibition <em>Religious Change in Print, 1450-1700</em>.</p>
-            <p>Designed by <a href="https://www.siteations.com" target="_blank" style={{fontWeight: 'normal'}}>Siteations Studio</a>, the site was conceived by Diane Dillon and Christopher Fletcher (Newberry Library). Edward Muir (Northwestern University) provided invaluable guidance on the project. Lia Markey and Andrew Epps (Newberry Library) and Eufemia Baldassarre (University of Chicago) compiled and edited the content for the site from the scholars listed above.</p>
+            <p>Designed by <a href="https://www.siteations.com" target="_blank" rel="noopener noreferrer" style={{fontWeight: 'normal'}}>Siteations Studio</a>, the site was conceived by Diane Dillon and Christopher Fletcher (Newberry Library). Edward Muir (Northwestern University) provided invaluable guidance on the project. Lia Markey and Andrew Epps (Newberry Library) and Eufemia Baldassarre (University of Chicago) compiled and edited the content for the site from the scholars listed above.</p>
           </div>
             )
 };

@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
-import Contact from './Contact.js';
 import {Tooltip} from 'react-lightweight-tooltip';
 
-//import mapSites from '../non-db/mapSites.js';
-import mapSites from '../non-db/mapSitesScreen.js';
 
-import { centerRescaled, tiling, scaleOps, sitesFiltered } from '../plug-ins/rawTiles.js';
+import { centerRescaled} from '../plug-ins/rawTiles.js';
 import {updateSite} from '../action-creators/siteActionsNDB.js';
-import {  setTitlesCore, setTitle, setNarr } from '../action-creators/panelActions.js';
+import {  setTitlesCore, setNarr } from '../action-creators/panelActions.js';
 import { togglePlay, updatePanelSmall } from '../action-creators/optionActionsNDB.js';
-import {updateZoom, updateTile, updateOffsets, updateCenter, updateCenterScreen, updateWindow, updateWindowOffsets, updateOffsetsResidual, updatePanelOffset, setMapTours, setMapSiteOne} from '../action-creators/mapActions.js';
+import {updateZoom, updateTile, updateOffsets, updateOffsetsResidual, setMapSiteOne} from '../action-creators/mapActions.js';
 
 //connect later to store;
 
@@ -50,26 +46,6 @@ const toolstyles = {
 const toolstyles2 = {
     wrapper: toolstyles.wrapper,
     content: toolstyles.content,
-    tooltip: {
-        backgroundColor: '#d8d0ba',
-        borderRadius: '10px',
-        position: 'absolute',
-        zIndex: '99',
-        background: '#000',
-        bottom: '0%',
-        left: '0%',
-        padding: '5px',
-        transform: 'translateX(0%) translateY(140%)',
-      },
-    arrow: toolstyles.arrow,
-};
-
-const toolstyles3 = {
-    wrapper: toolstyles.wrapper,
-    content: {
-        backgroundColor: '#e6e1d3',
-        color: 'black',
-    },
     tooltip: {
         backgroundColor: '#d8d0ba',
         borderRadius: '10px',

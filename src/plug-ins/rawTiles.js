@@ -9,8 +9,8 @@ export const scaleOps = {
 
 export const tiling = function(scale, tileSize, boundArr, off) {
 
-  let wide = boundArr[0];
-  let high = boundArr[1];
+  // let wide = boundArr[0];
+  // let high = boundArr[1];
   let xOff = off[0];
   let yOff = off[1];
 
@@ -19,7 +19,8 @@ export const tiling = function(scale, tileSize, boundArr, off) {
 
   if (scaleOps[scale]) {
     let limits = scaleOps[scale];
-    let x=0, y=0, xMax=limits[0], yMax=limits[1], width=limits[0]*tileSize, height=width/2;
+    // let x=0, y=0, xMax=limits[0], yMax=limits[1], width=limits[0]*tileSize, height=width/2;
+    let xMax=limits[0], yMax=limits[1];
 
     const tiles=[];
     let tile;

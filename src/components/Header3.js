@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
-
-const styles = {
-  chip: {
-    margin: 2,
-
-  },
-};
 //connect later?
 
 class Header3 extends Component {

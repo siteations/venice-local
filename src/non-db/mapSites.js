@@ -1,15 +1,15 @@
-const mapNames= {
-	barbari: './img/barbari',
-	bertilli: './img/bertilli',
-	bertilliAligned: './img/bertilliAligned',
-	bordone: './img/bordone',
-	florimi: './img/florimi',
-	florimiAligned: './img/florimiAligned',
-	forlani: './img/forlani',
-	forlaniAligned: './img/forlaniAligned',
-	merlo: './img/merlo',
-	none: 'no map',
-}
+// const mapNames= {
+// 	barbari: './img/barbari',
+// 	bertilli: './img/bertilli',
+// 	bertilliAligned: './img/bertilliAligned',
+// 	bordone: './img/bordone',
+// 	florimi: './img/florimi',
+// 	florimiAligned: './img/florimiAligned',
+// 	forlani: './img/forlani',
+// 	forlaniAligned: './img/forlaniAligned',
+// 	merlo: './img/merlo',
+// 	none: 'no map',
+// }
 
 const mapSites = [
 // presuming auto start, just click to advance, update tour

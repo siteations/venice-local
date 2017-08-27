@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
 import Imagetrey from './ImageSlider.js';
 
 import { setPanelSizing } from '../action-creators/panelActions.js';
-import {imageSeries} from '../non-db/cirTest.js';
 
-import { Intro, Credits, Biblio, About } from './Intro.js';
+import { Intro, Credits, Biblio} from './Intro.js';
 
 
 class PanelBase extends Component {
@@ -34,19 +32,19 @@ class PanelBase extends Component {
   }
 
   refImages(img){
-    let count = img.split(', ');
+    //let count = img.split(', ');
   }
 
   render(){
-    var obj, image;
+    var obj;
     var other = true;
     if (this.props.sites.currSite === '0'){other=false};
     (this.props.panel.narrObj)? obj=this.props.panel.narrObj : obj={};
 
     let images = this.props.sites.genImages.filter(images => +images.narrativeId === +obj.id);
-    let biblio = this.props.sites.genBiblio.filter(bib => +bib.narrativeId === +obj.id);
+    //let biblio = this.props.sites.genBiblio.filter(bib => +bib.narrativeId === +obj.id);
 
-    console.log(obj.type);
+    //console.log(obj.type);
 
     return (
          <div className={this.props.baseClass} ref="sizeP" id="panelWin" onAnimationEnd={e=> this.refSize(e)} style={{height:`${(this.props.sites.specLayer!=='prints')? this.props.map.windowSize[1]+6: this.props.map.windowSize[1]-40}px` }}>

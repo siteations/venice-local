@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { connect } from 'react-redux';
+import React from 'react';
 
 const LayersList=(props)=>{
 		let layers = props.layers;

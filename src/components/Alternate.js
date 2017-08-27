@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-//import Immutable from 'immutable';
-import {connect} from 'react-redux';
-import {deepOrange400, deepOrange600, deepOrange800, deepOrange900, brown800, blueGrey800, grey600, grey300, grey900, darkBlack, white, fullBlack} from 'material-ui/styles/colors';
+import {grey900} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 

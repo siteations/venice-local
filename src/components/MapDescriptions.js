@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 
 
@@ -25,7 +24,7 @@ class PanelMap extends Component {
   }
 
   refImages(img){
-    let count = img.split(', ');
+    //let count = img.split(', ');
   }
 
   render(){
@@ -54,7 +53,7 @@ class PanelMap extends Component {
           {obj.id>2 &&
             <div className="row">
               <div className="col-xs-3 center-block text-center">
-                <div className="bIcon text-center inlineBlock" ><img src={obj.src} style={{borderRadius: '5px'}}/></div>
+                <div className="bIcon text-center inlineBlock" ><img src={obj.src} style={{borderRadius: '5px'}} alt="" /></div>
               </div>
               <div className="col-xs-9">
                 <p>{obj.narrative &&
@@ -76,7 +75,7 @@ class PanelMap extends Component {
                 return (
              <div className="row">
               <div className="col-xs-3 center-block text-center">
-                <div className="bIcon text-center inlineBlock" ><img src={obj.src[i]} style={{borderRadius: '5px'}}/></div>
+                <div className="bIcon text-center inlineBlock" ><img src={obj.src[i]} style={{borderRadius: '5px'}} alt="" /></div>
               </div>
               <div className="col-xs-9">
                 <p>{item}</p>
