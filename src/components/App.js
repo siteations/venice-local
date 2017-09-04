@@ -6,6 +6,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+import Preloader from './Preloader.js';
+
 injectTapEventPlugin();
 
 
@@ -42,6 +44,7 @@ class App extends Component {
 		    <MuiThemeProvider muiTheme={muiTheme} >
 				<div className="container-fluid ">
 					<Frame />
+					<Preloader />
 				</div>
 				</MuiThemeProvider>
 		)

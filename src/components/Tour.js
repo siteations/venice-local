@@ -465,7 +465,7 @@ class FooterSlides extends Component {
                         {tour &&
                             tour.map(site=>{
 
-                            return <div className='bIcon text-center'
+                            return <div className='bIcon bIconL text-center'
                                 value={(this.props.type === 'maps' || site.id<3 )? site.id : site.core}
                                 data={site.minor}
                                 key = {site.id}

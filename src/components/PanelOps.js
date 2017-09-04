@@ -80,7 +80,7 @@ class PanelB extends Component {
                       return (
                    <div className="row">
                     <div className="col-xs-3 center-block text-center">
-                      <div className="bIcon text-center inlineBlock" ><img src={this.props.map.mapSite.src[i]} style={{borderRadius: '5px'}} alt="" /></div>
+                      <div className="bIcon bIconL text-center inlineBlock" ><img src={this.props.map.mapSite.src[i]} style={{borderRadius: '5px'}} alt="" /></div>
                     </div>
                     <div className="col-xs-9">
                       <h4 className="BornholmSandvig">{(this.props.map.mapSite.subtitles)? this.props.map.mapSite.subtitles[i] : ''}</h4>

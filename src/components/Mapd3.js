@@ -402,8 +402,8 @@ class MapSVG extends Component {
 
 
            //only for the form edits - leave on site -
-           onDoubleClick={(e)=>this.selectShowPanel(e, 'none')}
-           onClick={(e)=>e.preventDefault()}
+           onDoubleClick={(e)=>this.zoom(e, 'in')}
+           //onClick={(e)=>e.preventDefault()}
            >
 
                <svg width={this.props.map.windowSize[0]} height={height} xmlnsXlink='http://www.w3.org/1999/xlink' >
