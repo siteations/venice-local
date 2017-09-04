@@ -12,7 +12,7 @@ class Preloader extends Component {
   }
 
   // Preload images at the earliest possible event
-  componentWillMount() {
+  componentDidMount() {
     images.forEach((src) => {
       const img = document.createElement('img');
       img.src = src; // Assigning the img src immediately requests the image

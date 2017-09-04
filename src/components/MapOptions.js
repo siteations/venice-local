@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Tooltip} from 'react-lightweight-tooltip';
+import images from '../non-db/imageList.js';
 
 import {updateColor, updateAnno, updateDetail, setCurrTour} from '../action-creators/optionActionsNDB.js';
 import { scaleOps } from '../plug-ins/rawTiles.js';
@@ -65,6 +66,7 @@ class MapOps extends Component {
         this.opacityLayers=this.opacityLayers.bind(this);
         this.detailLayers=this.detailLayers.bind(this);
         this.zoom = this.zoom.bind(this);
+        this.pan = this.pan.bind(this);
         this.zoomReset = this.zoomReset.bind(this);
         this.setTour = this.setTour.bind(this);
     }
@@ -97,6 +99,44 @@ class MapOps extends Component {
         this.props.setCurrOffsets([oX, oY]);
         this.props.setCurrZoom(curr);
         this.props.setCurrTilesize(pix);
+
+        // //preload
+        // images.forEach(file=>{
+        //     if (+(file[0])===+curr){
+        //         const img = document.createElement('img');
+        //         img.src = file;
+        //     }
+        // });
+
+
+    }
+
+    pan(e, type){
+        e.preventDefault();
+        var vertical;
+        if (type==='up'){
+            vertical=-200;
+        } else if (type==='down'){
+            vertical=200;
+        } else {
+            vertical=0;
+        };
+        var horizontal;
+        if (type==='right'){
+            horizontal=200;
+        } else if (type==='left'){
+            horizontal=-200;
+        } else {
+            horizontal=0;
+        };
+
+        let curr=this.props.map.xyOffsets; //[x,y]
+
+
+        this.props.setOffsetsR([+curr[0] + horizontal, +curr[1] + vertical]);
+        this.props.setCurrOffsets([+curr[0] + horizontal, +curr[1] + vertical]);
+
+
     }
 
     zoomReset(e){
@@ -108,19 +148,29 @@ class MapOps extends Component {
         let height = sele.clientHeight;
         //let [xOff, yOff] = [0,0];
         //let [xOffR, yOffR] = [0,0];
+        var curr;
 
         var type = this.props.sites.specLayer;
         if (type !== "maps" || type !== "prints"){
             var w=128*(scaleOps[3][0]+1), h=128*(scaleOps[3][1]+1);
             this.props.setCurrZoom(3);
             this.props.setCurrTilesize(128);
+            curr=3;
         } else {
             var w=194*(scaleOps[2][0]+1), h=194*(scaleOps[2][1]+1);
             this.props.setCurrZoom(2);
             this.props.setCurrTilesize(194);
+            curr=2;
 
         }
 
+        //         //preload
+        // images.forEach(file=>{
+        //     if (+(file[0])===+curr){
+        //         const img = document.createElement('img');
+        //         img.src = file;
+        //     }
+        // });
 
         this.props.setCurrOffsets([(width-w)/-2,(height-h)/-2]);
         this.props.setOffsetsR([(width-w)/-2,(height-h)/-2]);
@@ -157,21 +207,48 @@ class MapOps extends Component {
     return (
             <div className="mtypeFull center-block text-center">
                 <h5 style={{fontWeight: 'bold'}}>map</h5>
-                <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.zoom(e, 'in')} onClick={e=>this.zoom(e, 'in')}>
+                <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.zoom(e, 'in')} >
                     <Tooltip content={'zoom in'} styles={toolstyles}>
-                        <span className="glyphicon glyphicon-plus" onTouchTap={e=>this.zoom(e, 'in')} onClick={e=>this.zoom(e, 'in')} ></span>
+                        <span className="glyphicon glyphicon-plus" onTouchTap={e=>this.zoom(e, 'in')}  ></span>
                     </Tooltip>
                 </button>
                 <br/>
-                <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.zoom(e, 'out')} onClick={e=>this.zoom(e, 'out')} >
+                <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.zoom(e, 'out')}  >
                     <Tooltip content={'zoom out'} styles={toolstyles}>
-                        <span className="glyphicon glyphicon-minus" onTouchTap={e=>this.zoom(e, 'out')} onClick={e=>this.zoom(e, 'out')}></span>
+                        <span className="glyphicon glyphicon-minus" onTouchTap={e=>this.zoom(e, 'out')} ></span>
                     </Tooltip>
                 </button>
                 <h5>zoom</h5>
-                <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.zoomReset(e)} onClick={e=>this.zoomReset(e)} >
+            {/* between these is for the live version only */}
+                    <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.pan(e, 'up')} >
+                    <Tooltip content={'pan up'} styles={toolstyles}>
+                        <span className="glyphicon glyphicon-arrow-up" onTouchTap={e=>this.pan(e, 'up')}  ></span>
+                    </Tooltip>
+                </button>
+                <br/>
+                <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.pan(e, 'left')}  >
+                    <Tooltip content={'pan left'} styles={toolstyles}>
+                        <span className="glyphicon glyphicon-arrow-left" onTouchTap={e=>this.pan(e, 'left')} ></span>
+                    </Tooltip>
+                </button>
+                                <br/>
+                <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.pan(e, 'right')}  >
+                    <Tooltip content={'pan right'} styles={toolstyles}>
+                        <span className="glyphicon glyphicon-arrow-right" onTouchTap={e=>this.pan(e, 'right')} ></span>
+                    </Tooltip>
+                </button>
+                                                <br/>
+                <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.pan(e, 'down')}  >
+                    <Tooltip content={'pan down'} styles={toolstyles}>
+                        <span className="glyphicon glyphicon-arrow-down" onTouchTap={e=>this.pan(e, 'down')} ></span>
+                    </Tooltip>
+                </button>
+                <h5>pan</h5>
+
+            {/* between these is for the live version only */}
+                <button className="btn btn-default btn-sm bIconSm" onTouchTap={e=>this.zoomReset(e)}  >
                     <Tooltip content={'reset position'} styles={toolstyles}>
-                        <span className="glyphicon glyphicon-resize-small" onTouchTap={e=>this.zoomReset(e)} onClick={e=>this.zoomReset(e)}></span>
+                        <span className="glyphicon glyphicon-resize-small" onTouchTap={e=>this.zoomReset(e)} ></span>
                     </Tooltip>
                 </button>
                 <h5>fit in<br/>window</h5>

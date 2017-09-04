@@ -47,7 +47,7 @@ class PanelMap extends Component {
                 <span> {obj.author}. <em>{obj.title}</em>. </span>
                 <span className=""> {obj.date}. {obj.publisher}. </span>
               </h5>
-              <h5 className="small"><span className="Trenda-Bold">Resource location: </span><a href={obj.cat} target="_blank" style={{fontWeight: 'normal'}}>Newberry Catalog</a></h5>
+              <h5 className="small screenOff "><span className="Trenda-Bold">Resource location: </span><a href={obj.cat} target="_blank" style={{fontWeight: 'normal'}}>Newberry Catalog</a></h5>
             </div>
           </div>
           {obj.id>2 &&

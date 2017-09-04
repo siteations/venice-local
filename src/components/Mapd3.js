@@ -394,10 +394,10 @@ class MapSVG extends Component {
            //onScroll={e=>console.log(e.type, e.detail)}
 
            //regular mouse or touch as click
-           onMouseDown = {e=>this.mouseLoc(e)}
-           onMouseUp = {e=>this.mouseLoc(e)}
-           onMouseMove = {e=>this.drag(e)}
-           onWheel = {e=>this.zoomScroll(e)}
+            onMouseDown = {e=>this.mouseLoc(e)}
+            onMouseUp = {e=>this.mouseLoc(e)}
+            onMouseMove = {e=>this.drag(e)}
+            onWheel = {e=>this.zoomScroll(e)}
            //use buttons for zoom on surface or screen(?)
 
 
@@ -464,7 +464,7 @@ class MapSVG extends Component {
                                     //onMouseOver = {e=>this.showLabel(e)}
                                     //onMouseOut={''/*e=>this.hideLabel(e)*/}
                                     onTouchTap={ e=>this.setLabel(e)}
-                                    onClick={ e=>this.setLabel(e)}
+                                    //onClick={ e=>this.setLabel(e)}
                                     onDoubleClick={(e)=>this.selectShowPanel(e, +d.id)}
                                     />
 

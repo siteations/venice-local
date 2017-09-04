@@ -449,14 +449,14 @@ class FooterSlides extends Component {
     return (
                   <div className="flex center" >
 
-                       <div className="nIcon flex center middle" style={{marginRight:'10px', marginLeft: '10px'}}>
+                       <div className="nIcon flex center middle" style={{marginRight:'10px', marginLeft: '10px'}} value="reset" onTouchTap={(e)=>this.resetStart(e)} >
                         <Tooltip content='return to start' styles={toolstyles}>
                         <span value="reset" className="glyphicon glyphicon glyphicon-step-backward" onTouchTap={(e)=>this.resetStart(e)} ></span>
                         </Tooltip>
                         </div>
 
 
-                        <div className="nIcon flex center middle" >
+                        <div className="nIcon flex center middle" value="back" onTouchTap={(this.state.tourSeries===1)? (e)=> e.preventDefault():(e)=>this.setPrior(e)} >
                         <Tooltip content='load last series' styles={toolstyles}>
                         <span value="back" className="glyphicon glyphicon glyphicon-chevron-left" style={{opacity:(this.state.tourSeries===1)? '.25' : '1'}} onTouchTap={(this.state.tourSeries===1)? (e)=> e.preventDefault():(e)=>this.setPrior(e)} ></span>
                         </Tooltip>
@@ -470,7 +470,7 @@ class FooterSlides extends Component {
                                 data={site.minor}
                                 key = {site.id}
                                 onTouchTap={e=>this.setSite(e)} >
-                                 <Tooltip content={`click for: ${site.name}`} styles={toolstyles2}>
+                                 <Tooltip content={`tap for: ${site.name}`} styles={toolstyles2}>
                                 <img src={(typeof(site.src)==='string')? site.src : site.src[+site.id-1]}
                                 style={{borderRadius: '5px', width: '100%'}}
                                 value={(this.props.type === 'maps')? site.id : site.core}
@@ -478,7 +478,7 @@ class FooterSlides extends Component {
                                 </Tooltip>
                                 </div>
                         })}
-                        <div className="nIcon flex center middle" >
+                        <div className="nIcon flex center middle" value="forward" onTouchTap={((this.state.tourSeries===3 && this.props.type !== "maps") || (this.state.tourSeries===2 && this.props.type === "maps"))? (e)=>e.preventDefault(): (e)=>this.setNext(e)} >
                         <Tooltip content='load more sites' styles={(this.props.type === "maps")? toolstyles : toolstyles4 }>
                         <span value="forward" className="glyphicon glyphicon-chevron-right" style={{opacity:((this.state.tourSeries===3 && this.props.type !== "maps") || (this.state.tourSeries===2 && this.props.type === "maps"))? '.25' : '1'}} onTouchTap={((this.state.tourSeries===3 && this.props.type !== "maps") || (this.state.tourSeries===2 && this.props.type === "maps"))? (e)=>e.preventDefault(): (e)=>this.setNext(e)} ></span>
                         </Tooltip>
