@@ -100,13 +100,13 @@ class MapOps extends Component {
         this.props.setCurrZoom(curr);
         this.props.setCurrTilesize(pix);
 
-        // //preload
-        // images.forEach(file=>{
-        //     if (+(file[0])===+curr){
-        //         const img = document.createElement('img');
-        //         img.src = file;
-        //     }
-        // });
+        //preload
+        images.forEach(file=>{
+            if (+(file[0])===+curr){
+                const img = document.createElement('img');
+                img.src = file;
+            }
+        });
 
 
     }
@@ -164,13 +164,13 @@ class MapOps extends Component {
 
         }
 
-        //         //preload
-        // images.forEach(file=>{
-        //     if (+(file[0])===+curr){
-        //         const img = document.createElement('img');
-        //         img.src = file;
-        //     }
-        // });
+                //preload
+        images.forEach(file=>{
+            if (+(file[0])===+curr){
+                const img = document.createElement('img');
+                img.src = file;
+            }
+        });
 
         this.props.setCurrOffsets([(width-w)/-2,(height-h)/-2]);
         this.props.setOffsetsR([(width-w)/-2,(height-h)/-2]);
