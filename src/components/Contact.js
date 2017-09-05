@@ -3,7 +3,7 @@ import React from 'react';
 
 const Contact = (props)=>{
 
-  var screen = null;
+  var screen = true;
 
 	return (
 
