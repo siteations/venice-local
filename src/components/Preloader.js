@@ -13,10 +13,10 @@ class Preloader extends Component {
 
   // Preload images at the earliest possible event
   componentDidMount() {
-    images.forEach((src) => {
-      const img = document.createElement('img');
-      img.src = src; // Assigning the img src immediately requests the image
-    });
+    // images.forEach((src) => {
+    //   const img = document.createElement('img');
+    //   img.src = src; // Assigning the img src immediately requests the image
+    // });
   }
 
   render() { // nothing needs to render, this is just to keep tiles available

@@ -113,7 +113,7 @@ class MapSVG extends Component {
     // }
 
     mouseLoc(e) {
-        e.preventDefault();
+        //e.preventDefault();
         var x, y;
         if (e.type==='mouseup' || e.type==="mousedown"){ x=e.clientX; y=e.clientY };
         if (e.type==='touchstart' || e.type==="touchend"){ x=e.changedTouches[0].clientX; y=e.changedTouches[0].clientY };
@@ -130,7 +130,7 @@ class MapSVG extends Component {
     }
 
     drag(e) {
-        e.preventDefault();
+        //e.preventDefault();
         var x, y;
         if (e.type==='mousemove'){ x=e.clientX; y=e.clientY };
         if (e.type==='touchmove'){ x=e.targetTouches[0].clientX; y=e.targetTouches[0].clientY };

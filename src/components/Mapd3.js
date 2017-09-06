@@ -86,7 +86,7 @@ class MapSVG extends Component {
     }
 
     mouseLoc(e) {
-        e.preventDefault();
+        //e.preventDefault();
         var x, y;
         if (e.type==='mouseup' || e.type==="mousedown"){ x=e.clientX; y=e.clientY };
         if (e.type==='touchstart' || e.type==="touchend"){ x=e.changedTouches[0].clientX; y=e.changedTouches[0].clientY };
@@ -103,7 +103,7 @@ class MapSVG extends Component {
     }
 
     drag(e) {
-        e.preventDefault();
+        //e.preventDefault();
         var x, y;
         if (e.type==='mousemove'){ x=e.clientX; y=e.clientY };
         if (e.type==='touchmove'){ x=e.targetTouches[0].clientX; y=e.targetTouches[0].clientY };
@@ -358,6 +358,7 @@ class MapSVG extends Component {
     render(){
 
         //minor site/tile filtering at the top of the map... as is fairly often updated
+        //console.log('tile optimization?', this.props.map.currZoom, this.props.map.tileSize);
 
         const tiles = tiling(this.props.map.currZoom, this.props.map.tileSize, this.props.map.windowSize, this.props.map.xyOffsets);
         const cirNew = sitesFiltered(this.props.map.xyOffsets, this.props.sites.allSites, this.props.sites.currLayers, tiles[0].percent);
