@@ -28,7 +28,7 @@ class Header2 extends Component {
     e.preventDefault();
    let val = (e.target.attributes.value.value);
 
-   if ((val === 'intro' || val === 'bibliography'|| val === 'contributors')){
+   if ((val === 'intro' || val === 'bibliography'|| val === 'contributors'|| val === 'navigation')){
 
       if (!this.props.options.panelSmall){this.props.panelSmall()};
       this.props.setColor(false);
@@ -124,6 +124,7 @@ class Header2 extends Component {
                           <div className="row flex around" style={{marginBottom:'5px'}}>
                             <span className="texta m10 bNav" value="bibliography" onTouchTap={this.changePanel}>Bibliography</span>
                             <span className="texta m10 bNav" value="contributors" onTouchTap={this.changePanel}>Contributors</span>
+                            <span className="texta m10 bNav" value="navigation" onTouchTap={this.changePanel}>Navigation Help</span>
                           </div>
                         </div>
             {/*<div className="col-lg-1">

@@ -30,6 +30,36 @@ export const Intro = (props)=>{
           )
 };
 
+export const Navigation = (props)=>{
+    let obj = props.obj;
+
+  return (
+          <div>
+          {obj.text &&
+            obj.text.map((item, i)=>{
+                return (
+                <div>
+                <h4 className="BornholmSandvig">{obj.subtitles[i]}</h4>
+                <img src={obj.image[i]} style={{width:'100%', marginBottom: '10px'}} /><br/>
+                <p>{item &&
+                      item.split('/').map((item,i) =>{
+                        if (i%2===0){
+                          return <span>{item}</span>
+                        } else {
+                          return <span><em>{item}</em></span>
+                        }
+                      })
+                }
+                </p><br/>
+                </div>
+                )
+            })
+            }
+          </div>
+          )
+};
+
+
 
 export const Biblio = (props)=>{
     let obj = props.obj;

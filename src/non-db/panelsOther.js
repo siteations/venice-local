@@ -220,6 +220,16 @@ export const panelsOther = {
 'Bronwen Wilson, UCLA'
 			],
 		},
+	},
+		navigation: {
+		title: ['The Religious Geography of Venice','Map Interface and Navigation Options'],
+		obj: {
+			type: 'navigation',
+			subtitles: ["Overall Structure","Accessing Site Info", "Moving Around the Map", "Turning Themed Layers On & Off", "Turning General Layers On & Off", "Tours: Printing and Cartographic Context"],
+			text: ['All of the buttons, except for map pan and zoom, work as toggles. Click once to turn an option on; click again to turn it off. The major site sections in the header - An Introduction, Printing Context, Cartographic Context, Bibliography, Contributors, and Navigation Help - can be clicked to change text panel contents and are also available in the options to the right of the map.',' To pull up specific site information, click on the site circles on the map. This will load titles, images, and text, as well as any additional details (square thumbnails) for the area, which can also be clicked for more information. If there are multiple dots below an image in the text panel, click on those to load additional imagery.','To zoom in or out on the map, use the plus and minus buttons. To pan, in any direction click the pan arrows. If, for any reason, you wish to reset the map - to be 100% of the main window - click the reset button. If you do not see a map, click the reset button.', 'There are two general ways to work with layers. On the options to the right of the map, click the icons to show or hide thematic layers. From top to bottom, categories are: all layers, churches, convents & monasteries, non-Catholic communities, processions, and printing. Some sites belong to more than one category and will thus show up under both categories. Just below the main title, the active, visible layers are shown. ',' On the bottom left are more general layer controls. Color lets users toggle between a greyscale and slightly desaturated color background. Layers turns off all annotations and will override the options to the right. This is to allow free exploration of the map. Finally, details allows viewers to hide extra details (the square thumbnails).', 'Of the main site sections, Printing Context and Cartographic Context offer users tours through the site. To navigate through a tour, click on the lower left thumbnails. This will load new textual information; it will zoom and center the map to focus your attention.'],
+			image: ['./img/help/overview-01.jpg', './img/help/sites-01.jpg', './img/help/move-01.jpg', './img/help/layers-themed-01.jpg', './img/help/layers-general-01.jpg', './img/help/tour-01.jpg']
+
+		},
 	}
 
 };

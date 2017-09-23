@@ -32,7 +32,8 @@ let mapButtons1=[
 
 let mapButtons2=[
 	{cn:"nIcon center-block", v:"bibliography", src:"./img/menu-01.svg" },
-	{cn:"nIcon center-block", v:"contributors", src:"./img/credits-01.svg" }
+	{cn:"nIcon center-block", v:"contributors", src:"./img/credits-01.svg" },
+	{cn:"nIcon center-block", v:"navigation", src:"./img/help-01.svg" }
 ];
 
 const toolstyles = {
@@ -113,14 +114,14 @@ class MapBar extends Component{
 			this.props.panelNone();
 		}
 
-		else if ((val === 'intro' || val === 'bibliography'|| val === 'contributors') && (this.props.options.panelNone)){
+		else if ((val === 'intro' || val === 'bibliography'|| val === 'contributors'|| val === 'navigation') && (this.props.options.panelNone)){
 			this.props.panelSmall();
 			this.props.setSpecPanel(val);
 			this.props.updateSite(0);
 			this.props.setTitles(panelsOther[val].title);
 			this.props.updateNarrative(panelsOther[val].obj);
 		}
-		else if ((val === 'intro' || val === 'bibliography'|| val === 'contributors') && (this.props.options.panelLarge)){
+		else if ((val === 'intro' || val === 'bibliography'|| val === 'contributors'|| val === 'navigation') && (this.props.options.panelLarge)){
 			this.props.panelSmall();
 			this.props.setSpecPanel(val);
 			this.props.updateSite(0);
@@ -128,7 +129,7 @@ class MapBar extends Component{
 			this.props.updateNarrative(panelsOther[val].obj);
 		}
 
-		else if ((val === 'intro' || val === 'bibliography'|| val === 'contributors') && (this.props.options.panelSmall)){
+		else if ((val === 'intro' || val === 'bibliography'|| val === 'contributors'|| val === 'navigation') && (this.props.options.panelSmall)){
 			this.props.setSpecPanel(val);
 			this.props.updateSite(0);
 			this.props.setTitles(panelsOther[val].title);

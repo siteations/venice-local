@@ -5,7 +5,7 @@ import Imagetrey from './ImageSlider.js';
 
 import { setPanelSizing } from '../action-creators/panelActions.js';
 
-import { Intro, Credits, Biblio} from './Intro.js';
+import { Intro, Credits, Biblio, Navigation} from './Intro.js';
 
 
 class PanelBase extends Component {
@@ -55,7 +55,7 @@ class PanelBase extends Component {
                 <Imagetrey image={images} onAnimationEnd={e=> this.refSize(e)} width={this.state.size[0]} height={(this.props.map.windowSize[1]+6)*0.65} />
               }
               <p>
-            {obj.text && typeof(obj.text)!=='object' && obj.type !== 'credits' && obj.type !== 'biblio' && obj.type !== 'intro' &&
+            {obj.text && typeof(obj.text)!=='object' && obj.type !== 'credits' && obj.type !== 'navigation' && obj.type !== 'biblio' && obj.type !== 'intro' &&
               obj.text.split('/').map((item,i) =>{
                 if (i%2===0){
                   return <span>{item}</span>
@@ -64,7 +64,7 @@ class PanelBase extends Component {
                 }
               })
             }
-            {obj.text && typeof(obj.text)==='object' && obj.type !== 'credits' && obj.type !== 'biblio' && obj.type !== 'intro' &&
+            {obj.text && typeof(obj.text)==='object' && obj.type !== 'credits' && obj.type !== 'navigation' && obj.type !== 'biblio' && obj.type !== 'intro' &&
               obj.text.map(lines=>{
                 return <p>{lines}</p>
               })
@@ -83,6 +83,11 @@ class PanelBase extends Component {
             {obj.type === 'credits' &&
               <div>
                 <Credits obj={obj} />
+              </div>
+            }
+            {obj.type === 'navigation' &&
+              <div>
+                <Navigation obj={obj} />
               </div>
             }
         </div>
