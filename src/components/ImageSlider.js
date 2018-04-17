@@ -42,12 +42,15 @@ class Image extends Component {
     var img = this.props.image[this.state.active];
     //var imgId = (img!==undefined)? img.id : this.props.image[0].id;
     if (img===undefined){this.setState({active: 0});};
+    console.log('what is this?', this.state.active, img, this.props.image);
     //let biblio = this.props.sites.genBiblio.filter(bib => +bib.imageId === +imgId);
 
   return (
     <div>
       <div className="text-center">
+        {img !== undefined &&
         <img src={this.props.image[this.state.active].src} alt="" style={{width:`${this.state.widthImg}px`}} onLoad={e=>this.getSize(e)} onChange={e=>this.getSize(e)}/>
+        }
       </div>
       <div className="row m10">
         <div className="col-xs-8 col-xs-offset-2 text-center">
@@ -63,7 +66,7 @@ class Image extends Component {
         </div>
       </div>
       <h5><span className="Trenda-Bold">Image: </span>
-          { this.props.image[this.state.active].bibliography &&
+          { img !== undefined &&
             this.props.image[this.state.active].bibliography.split('/').map((text,i) =>{
                                   if (i%2===0){
                                     return <span>{text}</span>
@@ -75,7 +78,10 @@ class Image extends Component {
           }
       </h5>
       <h5 span className="screenOff"><span className="Trenda-Bold">Resource location: </span>
-                        <a href={this.props.image[this.state.active].link} className="bNav"  target="_blank" style={{fontWeight: 'normal'}}>Newberry Catalog</a><br/><br/>
+                      { img !== undefined &&
+                        <a href={this.props.image[this.state.active].link} className="bNav"  target="_blank" style={{fontWeight: 'normal'}}>Newberry Catalog</a>
+                      }
+                        <br/><br/>
                        </h5>
     </div>
     );

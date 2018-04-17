@@ -281,7 +281,7 @@
     "name": "The Sessa Family.Campo San Lio",
     "type": "printing",
     "cluster": false,
-    "clusterId": 0
+    "clusterId": null
 },
 {
     "id": 45,
@@ -322,7 +322,7 @@
     "name": "Traveling Cartography.The Consumption of Maps",
     "type": "printing",
     "cluster": false,
-    "clusterId": 0
+    "clusterId": null
 },
 {
     "id": 52,
@@ -333,4 +333,54 @@
     "type": "convents & monasteries",
     "cluster": true,
     "clusterId": 9
+},
+{
+    "id": 53,
+    "cx": 15300,
+    "cy": 7500,
+    "r": 350,
+    "name": "The Armenian Church.San Lazzaro degli Armeni (further south, east in the Venetian Lagoon)",
+    "type": "convents & monasteries",
+    "cluster": false,
+    "clusterId": null
+},
+{
+    "id": 54,
+    "cx": 5120,
+    "cy": 3640,
+    "r": 212,
+    "name": "A Palace Purchased with a Dowry.Palazzo Corner",
+    "type": "processions",
+    "cluster": false,
+    "clusterId": null
+},
+{
+    "id": 55,
+    "cx": 5200,
+    "cy": 6700,
+    "r": 350,
+    "name": "Palladio’s Imprint on Venetian Architecture.Le Zitelle",
+    "type": "convents & monasteries",
+    "cluster": false,
+    "clusterId": null
+},
+{
+    "id": 56,
+    "cx": 8835,
+    "cy": 5572,
+    "r": 350,
+    "name": "The Dogaressa.Grand Canal",
+    "type": "processions",
+    "cluster": false,
+    "clusterId": null
+},
+{
+    "id": 57,
+    "cx": 9246,
+    "cy": 4279,
+    "r": 212,
+    "name": "Gli Schiavoni.Scuola di San Giorgio degli Schiavoni ",
+    "type": "convents & monasteries",
+    "cluster": false,
+    "clusterId": null
 }]

@@ -565,4 +565,58 @@
     "capShort": "San Zaccaria",
     "bibliography":"Vincenzo Coronelli. /Veduta di Venetia/. 1708-1709. Novacco 4F 289 (PrCt)",
     "link":"https://i-share.carli.illinois.edu/nby/cgi-bin/Pwebrecon.cgi?DB=local&v1=1&BBRecID=912449"
+},
+{
+    "id": 66,
+    "narrativeId": 58,
+    "src": "./img/case_w_927_942_tp_o2_resized.png",
+    "caption": " ",
+    "capShort": " ",
+    "bibliography":"Cesare Vecellio, /Corona delle nobili, et virtuose donne/. 1616. Case W 927 .942",
+    "link":"https://webvoyage.carli.illinois.edu/nby/cgi-bin/Pwebrecon.cgi?DB=local&v1=1&BBRecID=760598"
+},
+{
+    "id": 67,
+    "narrativeId": 58,
+    "src": "./img/case_w_927_942_folio_2v_o2_resized.png",
+    "caption": " ",
+    "capShort": " ",
+    "bibliography":"Cesare Vecellio, /Corona delle nobili, et virtuose donne/. 1616. Case W 927 .942",
+    "link":"https://webvoyage.carli.illinois.edu/nby/cgi-bin/Pwebrecon.cgi?DB=local&v1=1&BBRecID=760598"
+},
+{
+    "id": 68,
+    "narrativeId": 58,
+    "src": "./img/case_w_927_942_folio_2r_o2_resized.png",
+    "caption": " ",
+    "capShort": " ",
+    "bibliography":"Cesare Vecellio, /Corona delle nobili, et virtuose donne/. 1616. Case W 927 .942",
+    "link":"https://webvoyage.carli.illinois.edu/nby/cgi-bin/Pwebrecon.cgi?DB=local&v1=1&BBRecID=760598"
+},
+{
+    "id": 69,
+    "narrativeId": 23,
+    "src": "./img/novacco_2f_148_o2_resized.png",
+    "caption": "View of St. Mark's Square from the Piazzetta in Venice",
+    "capShort": "View of St. Mark's Square",
+    "bibliography":"Justus Sadeler, /View of St. Mark's Square from the Piazzetta in Venice/. Ca. 1600. Novacco 2F 148",
+    "link":"https://webvoyage.carli.illinois.edu/nby/cgi-bin/Pwebrecon.cgi?DB=local&v1=1&BBRecID=912454"
+},
+{
+    "id": 70,
+    "narrativeId": 57,
+    "src": "./img/novacco_4f_289_sheet_02_o2_resized.png",
+    "caption": "Palazzo Corner della Ca' Grande",
+    "capShort": "Palazzo Corner della Ca' Grande",
+    "bibliography":"Vincenzo Coronelli. /Veduta di Venetia/. 1708-1709. Novacco 4F 289 (PrCt)",
+    "link":"https://i-share.carli.illinois.edu/nby/cgi-bin/Pwebrecon.cgi?DB=local&v1=1&BBRecID=912449"
+},
+{
+    "id": 71,
+    "narrativeId": 59,
+    "src": "./img/wing_zp_635_f85_035_o2_resized.png",
+    "caption": "The Grand Canal during festivities, Doge and dogaressa's participation",
+    "capShort": "The Grand Canal",
+    "bibliography":"Giovanni Nicolò Doglioni. /La città di Venetia con l’origine e governo di quella/. 1614. Wing folio ZP 635 .F85",
+    "link":"https://webvoyage.carli.illinois.edu/nby/cgi-bin/Pwebrecon.cgi?DB=local&v1=1&BBRecID=912447"
 }]
