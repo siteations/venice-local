@@ -211,6 +211,7 @@ export const panelsOther = {
 'Jill E. Gage, Newberry Library',
 'Elizabeth Horodowich, New Mexico State University',
 'Deborah Howard, Cambridge University',
+'Holly Hurlburt, Southern Illinois University-Carbondale',
 'Dana E. Katz, Reed College',
 'Lia Markey, Newberry Library',
 'Christopher Nygren, University of Pittsburgh',
